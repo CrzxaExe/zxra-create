@@ -1,101 +1,180 @@
 import Image from "next/image";
+import Link from "next/link";
+
+import logo from "@/app/asset/Zxra.png";
+import star from "@/app/asset/star_half_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg";
+import SS from "@/app/asset/ss.png";
+
+import {
+  BoltOutlined,
+  GradeOutlined,
+  AspectRatioOutlined,
+  UpdateOutlined,
+} from "@mui/icons-material";
+
+import { CenterHr } from "@/components/hr";
+
+import mks from "@/package.json";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <section className="container max-w-screen-xl pt-10">
+        <div className="flex flex-row items-center justify-center -mt-12 lg:mt-3 2xl:mt-[4rem]">
+          <div className="px-3 py-5 w-full flex items-center justify-center flex-col lg:flex-row lg:-ml-[3rem]">
             <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              alt="logo"
+              src={logo}
+              width={300}
+              height={300}
+              className="-mb-[4.9rem] lg:-mb-[2.3rem] aspect-square w-[24rem] lg:w-[16rem] 2xl:w-[27rem] -mr-[0.5rem] lg:mr-[0.4rem] transition-all duration-300 ease-in-out"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <h1 className="opacity-0 lg:opacity-100 font-valorant text-6xl lg:text-7xl 2xl:text-8xl -ml-[2rem] lg:-ml-[3.4rem] 2xl:-ml-[4.4rem] -mt-[8rem] lg:mt-[3rem] transition-all duration-300 ease-in-out">
+              Zxra <span className="hidden xl:inline">Create</span>
+            </h1>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="px-7 2xl:-mt-[1rem]">
+          <h2 className="lg:text-center w-full text-slate-200 text-4xl lg:text-5xl 2xl:text-6xl mt-[4rem] lg:-mt-[2rem] font-paprika font-semibold pr-[15%] lg:pr-0 flex items-end lg:mx-[28%] xl:mx-[22rem] 2xl:mx-[19.4rem]">
+            Eazier your life with us
+            <Image
+              alt="star"
+              src={star}
+              width={29}
+              height={29}
+              className="ml-2 hidden lg:inline"
+            />
+          </h2>
+          <p className="text-base lg:text-lg 2xl:text-2xl 2xl:px-[5rem] w-full text-justify lg:text-center lg:px-14 whitespace-normal mb-5 mt-4 xl:mt-12 lg:mt-2 font-geistMono text-slate-400">
+            Hanya grup biasa yang menciptakan sesuatu hal yang berhubungan
+            dengan bahasa pemrograman dan juga pergambaran yang mungkin bisa
+            menjadi ref kalian
+          </p>
+          <div className="w-full flex flex-row lg:justify-center gap-4 mt-2 lg:mt-[1.2rem] 2xl:mt-[2.4rem]">
+            <Link
+              href="/login"
+              className="block w-fit px-8 py-3 text-xl border border-slate-400 text-slate-400 rounded-3xl hover:bg-slate-400 hover:text-primary-800 transition-all duration-300 ease-in-out"
+            >
+              Masuk
+            </Link>
+            <Link
+              href="/register"
+              className="block w-fit px-8 py-3 text-xl bg-slate-400 border border-slate-400 text-primary-800 hover:text-slate-400 rounded-3xl hover:bg-transparent transition-all duration-300 ease-in-out"
+            >
+              Daftar
+            </Link>
+          </div>
+        </div>
+
+        <p className="mt-4 2xl:mt-[2rem] text-slate-600 w-full px-6 lg:text-center font-geistMono">
+          V{mks.version}
+        </p>
+
+        <p className="mt-4 2xl:mt-[1.8rem] lg:mb-[3.6rem] 2xl:mb-[4.3rem] text-slate-400 w-full px-6 lg:text-center font-geistMono">
+          Scroll kebawah untuk lihat selengkapnya
+        </p>
+
+        <CenterHr text="Ringkasan" className="px-8" />
+
+        <section className="px-7 mt-12 py-3 mb-8">
+          <div className="flex flex-wrap gap-1">
+            <div className="w-full md:w-[49%] md:pr-1">
+              <span className="text-slate-500 text-base lg:text-xl block mt-2">
+                Apa itu
+              </span>
+              <span className="text-3xl lg:text-5xl text-teal-500 font-bold font-paprika mb-2">
+                Zxra Create
+              </span>
+              <p className="text-slate-400 text-base lg:text-2xl text-justify">
+                Sebuah aplikasi website dan merupakan pengganti website Zxra
+                Create yang dulu namun sekarang dibuat ulang menggunakan
+                framework
+                <a
+                  href="https://nextjs.org/"
+                  className="text-sky-300 px-2.5"
+                  target="blank"
+                >
+                  Next.js
+                </a>
+                yang cukup powerfull dan memiliki ekosistem yang bagus. Sekarang
+                Website ini akan lebih banyak konten dan hal baru yang mungkin
+                akan kalian kenali saat menggunakannya.
+                <br />
+                <br />
+                Sekarang anda harus login untuk mengakses semua fitur yang ada,
+                tenang fitur disini masih tidak ada biaya apapun jadi kalian
+                masih bisa mengakses semua fitur yang ada dan kami akan selalu
+                meningkatkan kinerja aplikasi ini.
+                <br />
+                <br />
+                Eazier your life with Zxra Create
+              </p>
+            </div>
+            <div className="w-full md:w-[49%] xl:p-[3.7rem] xl:pt-0">
+              <Image
+                src={SS}
+                alt="Screenshoot"
+                width={400}
+                height={400}
+                className="object-contain w-full mt-5 md:mt-0 md:pl-2"
+              />
+            </div>
+
+            <div className="w-full mt-2 lg:mt-5">
+              <div className="flex flex-wrap w-full gap-5">
+                <div className="w-[47.2%] md:w-[31.4%] lg:w-[23.5%] rounded-xl py-2 relative">
+                  <div className="flex flex-row items-end text-slate-400 gap-2">
+                    <BoltOutlined className="text-2xl lg:text-3xl aspect-square" />
+                    <b className="text-xl lg:text-2xl font-geistSans">
+                      Cepat & Kuat
+                    </b>
+                  </div>
+                  <p className="text-slate-400 mt-1 text-sm lg:text-base 2xl:text-lg">
+                    Kinerja website lebih cepat untuk memproses dan lebih
+                    powerfull.
+                  </p>
+                </div>
+
+                <div className="w-[47.2%] md:w-[31.4%] lg:w-[23.5%] rounded-xl py-2 relative">
+                  <div className="flex flex-row items-end text-slate-400 gap-2">
+                    <GradeOutlined className="text-2xl lg:text-3xl aspect-square" />
+                    <b className="text-xl lg:text-2xl font-geistSans">
+                      Bersih & Simpel
+                    </b>
+                  </div>
+                  <p className="text-slate-400 mt-1 text-sm lg:text-base 2xl:text-lg">
+                    Tampilan lebih bersih dipadukan dengan desain minimalist.
+                  </p>
+                </div>
+
+                <div className="w-[47.2%] md:w-[31.4%] lg:w-[23.5%] rounded-xl py-2 relative">
+                  <div className="flex flex-row items-end text-slate-400 gap-2">
+                    <AspectRatioOutlined className="text-2xl lg:text-3xl aspect-square" />
+                    <b className="text-xl lg:text-2xl font-geistSans">
+                      Responsif
+                    </b>
+                  </div>
+                  <p className="text-slate-400 mt-1 text-sm lg:text-base 2xl:text-lg">
+                    Tampilan akan menyesuaikan dengan ukuran layar anda.
+                  </p>
+                </div>
+
+                <div className="w-[47.2%] md:w-[31.4%] lg:w-[23.5%] rounded-xl py-2 relative">
+                  <div className="flex flex-row items-end text-slate-400 gap-2">
+                    <UpdateOutlined className="text-2xl lg:text-3xl aspect-square" />
+                    <b className="text-xl lg:text-2xl font-geistSans">Modern</b>
+                  </div>
+                  <p className="text-slate-400 mt-1 text-sm lg:text-base 2xl:text-lg">
+                    Menggunakan teknologi yang lebih baru
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <Footer />
+    </>
   );
 }

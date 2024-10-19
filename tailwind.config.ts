@@ -9,9 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: {
+          300: "#3b4763",
+          800: "#2a3040",
+          900: "#1f2430",
+          950: "#1b1f29",
+        },
       },
+      fontFamily: {
+        valorant: ["var(--font-valorant)"],
+        paprika: ["var(--font-paprika)"],
+        geistSans: ["var(--font-geist-sans)"],
+        geistMono: ["var(--font-geist-mono)"],
+      },
+    },
+    container: {
+      center: true,
     },
   },
   plugins: [],
