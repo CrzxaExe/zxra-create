@@ -41,7 +41,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${valorant.variable} ${paprika} bg-gradient-to-br  from-primary-900 to-primary-800 text-white`}
       >
-        <Topbar full={false} home={true} isLogin={false} />
+        <Topbar full={false} home={true} />
         {children}
       </body>
     </html>

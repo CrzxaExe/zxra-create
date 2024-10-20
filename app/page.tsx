@@ -9,7 +9,7 @@ import {
   BoltOutlined,
   GradeOutlined,
   AspectRatioOutlined,
-  UpdateOutlined,
+  UpgradeOutlined,
 } from "@mui/icons-material";
 
 import { CenterHr } from "@/components/hr";
@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <section className="container max-w-screen-xl pt-10">
-        <div className="flex flex-row items-center justify-center -mt-12 lg:mt-3 2xl:mt-[4rem]">
+        <div className="flex flex-row items-center justify-center -mt-12 lg:mt-[7vh] 2xl:mt-[5vh]">
           <div className="px-3 py-5 w-full flex items-center justify-center flex-col lg:flex-row lg:-ml-[3rem]">
             <Image
               alt="logo"
@@ -35,8 +35,8 @@ export default function Home() {
             </h1>
           </div>
         </div>
-        <div className="px-7 2xl:-mt-[1rem]">
-          <h2 className="lg:text-center w-full text-slate-200 text-4xl lg:text-5xl 2xl:text-6xl mt-[4rem] lg:-mt-[2rem] font-paprika font-semibold pr-[15%] lg:pr-0 flex items-end lg:mx-[28%] xl:mx-[22rem] 2xl:mx-[19.4rem]">
+        <div className="px-7 lg:mt-[3vh] 2xl:-mt-[1rem]">
+          <h2 className="lg:text-center w-full text-slate-200 text-4xl md:text-5xl lg:text-6xl 2xl:text-6xl mt-[4rem] lg:-mt-[2rem] font-paprika font-semibold pr-[15%] lg:pr-0 flex items-end lg:mx-[28%] xl:mx-[22rem] 2xl:mx-[19rem]">
             Eazier your life with us
             <Image
               alt="star"
@@ -46,12 +46,12 @@ export default function Home() {
               className="ml-2 hidden lg:inline"
             />
           </h2>
-          <p className="text-base lg:text-lg 2xl:text-2xl 2xl:px-[5rem] w-full text-justify lg:text-center lg:px-14 whitespace-normal mb-5 mt-4 xl:mt-12 lg:mt-2 font-geistMono text-slate-400">
+          <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl 2xl:px-[5rem] w-full text-justify lg:text-center lg:px-14 whitespace-normal mb-5 mt-[6vh] xl:mt-12 lg:mt-2 font-geistMono text-slate-400">
             Hanya grup biasa yang menciptakan sesuatu hal yang berhubungan
             dengan bahasa pemrograman dan juga pergambaran yang mungkin bisa
             menjadi ref kalian
           </p>
-          <div className="w-full flex flex-row lg:justify-center gap-4 mt-2 lg:mt-[1.2rem] 2xl:mt-[2.4rem]">
+          <div className="w-full flex flex-row lg:justify-center gap-4 mt-[4vh] lg:mt-[1.2rem] 2xl:mt-[2.4rem]">
             <Link
               href="/login"
               className="block w-fit px-8 py-3 text-xl border border-slate-400 text-slate-400 rounded-3xl hover:bg-slate-400 hover:text-primary-800 transition-all duration-300 ease-in-out"
@@ -67,11 +67,11 @@ export default function Home() {
           </div>
         </div>
 
-        <p className="mt-4 2xl:mt-[2rem] text-slate-600 w-full px-6 lg:text-center font-geistMono">
+        <p className="mt-[8vh] md:mt-[6vh] 2xl:mt-[2rem] text-slate-600 w-full px-6 lg:text-center font-geistMono">
           V{mks.version}
         </p>
 
-        <p className="mt-4 2xl:mt-[1.8rem] lg:mb-[3.6rem] 2xl:mb-[4.3rem] text-slate-400 w-full px-6 lg:text-center font-geistMono">
+        <p className="mt-[7vh] md:mt-[10vh] 2xl:mt-[1.8rem] mb-[6vh] lg:mb-[3.6rem] 2xl:mb-[4.3rem] text-slate-400 w-full px-6 lg:text-center font-geistMono">
           Scroll kebawah untuk lihat selengkapnya
         </p>
 
@@ -162,7 +162,7 @@ export default function Home() {
 
                 <div className="w-[47.2%] md:w-[31.4%] lg:w-[23.5%] rounded-xl py-2 relative">
                   <div className="flex flex-row items-end text-slate-400 gap-2">
-                    <UpdateOutlined className="text-2xl lg:text-3xl aspect-square" />
+                    <UpgradeOutlined className="text-2xl lg:text-3xl aspect-square" />
                     <b className="text-xl lg:text-2xl font-geistSans">Modern</b>
                   </div>
                   <p className="text-slate-400 mt-1 text-sm lg:text-base 2xl:text-lg">
