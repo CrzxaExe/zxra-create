@@ -7,39 +7,47 @@ import { redirect } from "next/navigation";
 import { signIn } from "@/auth";
 import { AuthError } from "next-auth";
 import mongoose from "mongoose";
+import { CloseDB, ConnectDB } from "./db";
+import { generateUUID } from "./generate";
 
 export const registerCredentials = async (
   prevState: unknown,
   formData: FormData
 ) => {
-  const validate = RegisterSchema.safeParse(
-    Object.fromEntries(formData.entries())
-  );
-
-  if (!validate.success) {
-    return { error: validate.error.flatten().fieldErrors };
-  }
-
-  const { name, email, password } = validate.data;
-  let user = await Account.findOne({ email });
-
-  if (user) return { message: "Email telah terdaftar" };
-
-  const hashedPassword = hashSync(password, 10);
-
   try {
+    await ConnectDB();
+
+    const validate = RegisterSchema.safeParse(
+      Object.fromEntries(formData.entries())
+    );
+
+    if (!validate.success) {
+      return { error: validate.error.flatten().fieldErrors };
+    }
+
+    const { name, email, password } = validate.data;
+    let user = await Account.findOne({ email });
+
+    if (user) return { message: "Email telah terdaftar" };
+
+    const hashedPassword = hashSync(password, 10);
+
     user = new Account({
       _id: new mongoose.Types.ObjectId(),
       name: name,
       email: email,
       password: hashedPassword,
+      userID: generateUUID(12),
     });
-    user.save();
+    await user.save();
+
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return {
       message: `Gagal melakukan registrasi: ${error}`,
     };
+  } finally {
+    await CloseDB();
   }
 
   redirect("/login");

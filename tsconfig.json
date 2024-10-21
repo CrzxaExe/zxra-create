@@ -27,7 +27,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/api/register/route.js",
-    "mongoose/models/account.js"
+    "mongoose/models/account.js",
+    "lib/db.js"
   ],
   "exclude": ["node_modules"]
 }

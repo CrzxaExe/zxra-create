@@ -1,12 +1,10 @@
 "use client";
 
 import React from "react";
-import { LoginButton, OtherLoginButton } from "../button";
+import { LoginButton } from "../button";
 import Link from "next/link";
 import { CenterHr } from "../hr";
 
-import GoogleIcon from "@mui/icons-material/Google";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import { loginCredentials } from "@/lib/action";
 import { useFormState } from "react-dom";
 
@@ -65,18 +63,6 @@ const LoginForm = () => {
       </span>
 
       <CenterHr text="Atau" />
-
-      <div className="w-full">
-        <OtherLoginButton className="flex flex-row items-center justify-center gap-2">
-          <GoogleIcon />
-          Google
-        </OtherLoginButton>
-
-        <OtherLoginButton className="flex flex-row items-center justify-center gap-2 mt-1">
-          <GitHubIcon />
-          Github
-        </OtherLoginButton>
-      </div>
     </div>
   );
 };

@@ -15,10 +15,14 @@ export const TopbarButton = ({
   return (
     <Link
       href={href}
-      className={`${className} flex flex-row items-center text-lg font-paprika hover:text-amber-400 px-1 transition duration-300 ease-in-out`}
+      className={`${className} flex flex-row items-center justify-center text-lg font-paprika hover:text-amber-400 px-1 transition duration-300 ease-in-out`}
     >
       <div className="md:hidden">{children}</div>
-      <span className={`${!children ? "block" : "hidden"} md:block`}>
+      <span
+        className={`${
+          !children ? "block" : "hidden"
+        } md:block text-center flex items-center justify-center`}
+      >
         {text}
       </span>
     </Link>
@@ -49,22 +53,6 @@ export const LoginButton = () => {
       className="w-full bg-slate-700 px-5 text-center py-3 mt-5 rounded-lg text-slate-400"
     >
       {pending ? "Masuk..." : "Masuk"}
-    </button>
-  );
-};
-
-export const OtherLoginButton = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <button
-      className={`${className} w-full bg-slate-700 px-5 text-center py-3 mt-5 rounded-lg text-slate-400`}
-    >
-      {children}
     </button>
   );
 };

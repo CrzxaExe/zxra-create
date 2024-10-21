@@ -1,14 +1,7 @@
-import { AuthButton } from "@/components/auth/authButton";
 import React from "react";
 
 const Page = () => {
-  return (
-    <div className="mt-[6rem]">
-      <h1>test</h1>
-
-      <AuthButton />
-    </div>
-  );
+  return <div className="mt-[6rem] max-w-screen-lg px-3 mx-auto"></div>;
 };
 
 export default Page;
