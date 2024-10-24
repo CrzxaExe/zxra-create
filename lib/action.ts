@@ -1,7 +1,7 @@
 "use server";
 
 import Account from "@/mongoose/models/account";
-import { RegisterSchema, LoginSchema } from "./zod";
+import { RegisterSchema, LoginSchema, AuthSchema } from "./zod";
 import { hashSync } from "bcrypt-ts";
 import { redirect } from "next/navigation";
 import { signIn } from "@/auth";
@@ -80,4 +80,41 @@ export const loginCredentials = async (
     }
     throw error;
   }
+};
+
+export const authCredentials = async (
+  prevState: unknown,
+  formData: FormData
+) => {
+  try {
+    await ConnectDB();
+
+    const validate = AuthSchema.safeParse(
+      Object.fromEntries(formData.entries())
+    );
+
+    if (!validate.success) {
+      return { error: validate.error.flatten().fieldErrors };
+    }
+
+    const { name, email } = validate.data;
+    let user = await Account.findOne({ email });
+
+    if (user) return { message: "Email telah terdaftar" };
+
+    user = new Account({
+      _id: new mongoose.Types.ObjectId(),
+      name: name,
+      email: email,
+      userID: generateUUID(12),
+    });
+
+    await user.save();
+  } catch (error) {
+    return { message: "Error " + error };
+  } finally {
+    await CloseDB();
+  }
+
+  redirect("/dashboard");
 };

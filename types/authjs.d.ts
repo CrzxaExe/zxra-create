@@ -4,6 +4,7 @@ import { GitHubProfile } from "next-auth/providers/github";
 
 declare module "next-auth" {
   interface Session {
+    handle: any | null;
     user: {
       userID?: string;
     } & DefaultSession["user"];

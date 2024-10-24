@@ -20,3 +20,8 @@ export const LoginSchema = object({
     .min(6, "Password minimal 6 karakter")
     .max(32, "Password tidak boleh lebih dari 32 karakter"),
 });
+
+export const AuthSchema = object({
+  name: string().min(2, "Nama harus lebih dari 2 karakter"),
+  email: string().email("Email tidak valid"),
+});

@@ -8,7 +8,9 @@ const AccSchema = new mongoose.Schema(
     name: { type: String, required: true },
     userID: { type: String },
     email: { type: String, required: true },
+    money: { type: Number, default: 0 },
     password: { type: String },
+    status: { type: String, default: "Status" },
     image: { type: String },
   },
   { timestamps: true }

@@ -8,8 +8,6 @@ import userImg from "@/app/asset/istockphoto-1300845620-612x612.jpg";
 const UserButton = async () => {
   const session = await auth();
 
-  //   console.log(session?.user);
-
   return !session ? (
     ""
   ) : (
@@ -22,9 +20,9 @@ const UserButton = async () => {
         alt="Profile"
         width={300}
         height={300}
-        className="aspect-square w-[30px] rounded-full absolute left-1 top-1 bottom-2"
+        className="aspect-square w-[30px] rounded-full absolute left-1 top-1 bottom-2.5"
       />
-      <h1 className="px-4 pl-[38px] py-2">
+      <h1 className="px-4 pl-[38px] py-2 font-bold">
         {session?.user?.name?.split(" ")[0] || "Tamu"}
       </h1>
     </Link>

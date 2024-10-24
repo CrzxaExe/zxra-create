@@ -56,3 +56,17 @@ export const LoginButton = () => {
     </button>
   );
 };
+
+export const AuthButton = () => {
+  const { pending } = useFormStatus();
+
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className="w-full bg-slate-700 px-5 text-center py-3 mt-5 rounded-lg text-slate-400"
+    >
+      {pending ? "Autentikasi..." : "Autentikasi"}
+    </button>
+  );
+};

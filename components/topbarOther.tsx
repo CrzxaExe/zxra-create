@@ -4,19 +4,24 @@ import { TopbarButton } from "./button";
 import { Login } from "@mui/icons-material";
 import { Newspaper } from "@mui/icons-material";
 import UserButton from "./auth/userButton";
+import { auth } from "@/auth";
 
-const TopbarOther = ({ full }: { full: boolean }) => {
+const TopbarOther = async ({ full }: { full: boolean }) => {
+  const session = await auth();
+
   return (
     <div className="flex items-center">
       <ul className="flex flex-row gap-2">
         <li>
-          <TopbarButton
-            href="/login"
-            text="Masuk"
-            className="flex flex-row items-center h-full"
-          >
-            <Login />
-          </TopbarButton>
+          {!session && (
+            <TopbarButton
+              href="/login"
+              text="Masuk"
+              className="flex flex-row items-center h-full"
+            >
+              <Login />
+            </TopbarButton>
+          )}
         </li>
         {full && (
           <li>
