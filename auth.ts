@@ -61,11 +61,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       }
       return true;
     },
-    jwt({ token, user, profile, account }) {
+    jwt({ token, user }) {
       return {
         ...token,
         ...user,
-        handle: { profile, account },
       };
     },
     async session({ session, token }) {
