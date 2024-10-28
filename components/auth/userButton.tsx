@@ -1,13 +1,11 @@
-import { auth } from "@/auth";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 import userImg from "@/app/asset/istockphoto-1300845620-612x612.jpg";
 
-const UserButton = async () => {
-  const session = await auth();
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const UserButton = ({ session }: { session?: any }) => {
   return !session ? (
     ""
   ) : (

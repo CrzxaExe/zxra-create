@@ -1,19 +1,14 @@
-import React from "react";
 import { TopbarButton } from "./button";
-
-import { Login } from "@mui/icons-material";
-import { Newspaper } from "@mui/icons-material";
+import { Login, Newspaper } from "@mui/icons-material";
 import UserButton from "./auth/userButton";
-import { auth } from "@/auth";
 
-const TopbarOther = async ({ full }: { full: boolean }) => {
-  const session = await auth();
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TopbarOther = ({ full, session }: { full: boolean; session?: any }) => {
   return (
     <div className="flex items-center">
       <ul className="flex flex-row gap-2">
         <li>
-          {!session && (
+          {!full && (
             <TopbarButton
               href="/login"
               text="Masuk"
@@ -25,12 +20,16 @@ const TopbarOther = async ({ full }: { full: boolean }) => {
         </li>
         {full && (
           <li>
-            <TopbarButton href="/dashboard" text="Beranda">
+            <TopbarButton
+              href="/dashboard"
+              text="Beranda"
+              className="flex flex-row items-center h-full"
+            >
               <Newspaper />
             </TopbarButton>
           </li>
         )}
-        <UserButton />
+        <UserButton session={session} />
       </ul>
     </div>
   );

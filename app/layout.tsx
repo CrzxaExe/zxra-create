@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 import Topbar from "@/components/topbar";
+import { auth } from "@/auth";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,17 +32,20 @@ export const metadata: Metadata = {
   description: "Zxra for our apps",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await auth();
+
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning={true}
         className={`${geistSans.variable} ${geistMono.variable} ${valorant.variable} ${paprika} bg-gradient-to-br  from-primary-900 to-primary-800 text-white`}
       >
-        <Topbar full={false} home={true} />
+        <Topbar full={session ? true : false} home={true} session={session} />
         {children}
       </body>
     </html>
