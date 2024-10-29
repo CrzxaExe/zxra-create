@@ -6,10 +6,13 @@ import React from "react";
 import userImg from "@/app/asset/istockphoto-1300845620-612x612.jpg";
 import { FindEmail } from "@/lib/db";
 import UpdateForm from "@/components/auth/updateForm";
+import { metadata } from "@/app/layout";
 
 const Page = async () => {
   const session = await auth();
   const user = await FindEmail(session?.user?.email || "");
+
+  metadata.title = session?.user?.name || "User";
 
   return (
     <div className="mt-[6rem] max-w-screen-lg px-10 mx-auto">

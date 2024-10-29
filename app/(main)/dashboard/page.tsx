@@ -6,8 +6,12 @@ import React from "react";
 import AppList from "@/components/items/appList";
 import Img from "@/components/items/img";
 import News from "@/components/items/news";
+import { metadata } from "@/app/layout";
+import { CenterHr } from "@/components/hr";
 
 const Page = async () => {
+  metadata.title = "Beranda";
+
   const session = await auth();
   const user = await FindEmail(session?.user?.email || "");
 
@@ -23,6 +27,8 @@ const Page = async () => {
 
       <section className="px-7 mt-5">
         <News />
+
+        <CenterHr text="Menu" />
 
         <h1 className="text-xl lg:text-2xl font-bold font-paprika mb-2">
           Aplikasi
