@@ -11,16 +11,16 @@ const UserButton = ({ session }: { session?: any }) => {
   ) : (
     <Link
       href="/user"
-      className="flex flex-row bg-slate-500 relative rounded-lg"
+      className="flex flex-row items-center bg-slate-500 rounded-lg"
     >
       <Image
         src={session?.user?.image || userImg}
         alt="Profile"
         width={300}
         height={300}
-        className="aspect-square w-[30px] rounded-full absolute left-1 top-1 bottom-2.5"
+        className="aspect-square w-[30px] h-[30px] rounded-full ml-1"
       />
-      <h1 className="px-4 pl-[38px] py-2 font-bold">
+      <h1 className="px-2 py-1.5 font-bold">
         {session?.user?.name?.split(" ")[0] || "Tamu"}
       </h1>
     </Link>

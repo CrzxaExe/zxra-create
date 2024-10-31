@@ -18,7 +18,7 @@ const Card = ({
       >
         {children}
       </Link>
-      <h1 className="font-paprika text-sm">{nm}</h1>
+      <h1 className="font-paprika text-sm px-1">{nm}</h1>
     </>
   );
 };

@@ -1,9 +1,6 @@
-"use client";
-
-import { User } from "next-auth";
 import React from "react";
 
-const UpdateForm = ({ user }: { user: User }) => {
+const UpdateForm = ({ user }: { user: { status: string } }) => {
   return (
     <form action="" className="mt-2">
       <h1 className="test-base mt-2">Status</h1>

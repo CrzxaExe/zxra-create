@@ -18,14 +18,14 @@ const Page = async () => {
   if (user?.error) redirect("/no-auth");
 
   return (
-    <div className="lg:mt-[6rem] max-w-screen-lg mx-auto">
+    <div className="lg:mt-[6rem] max-w-screen-lg mx-auto pb-7">
       <Img
         src="https://raw.githubusercontent.com/CrzxaExe/CzWeb/main/img/heads.png"
         alt="head"
         className="w-full lg:rounded-lg max-h-[230px] lg:max-h-[320px] object-cover"
       />
 
-      <section className="px-7 mt-5">
+      <section className="px-7 mt-5 pb-5">
         <News />
 
         <CenterHr text="Menu" />
