@@ -8,6 +8,7 @@ import Img from "@/components/items/img";
 import News from "@/components/items/news";
 import { metadata } from "@/app/layout";
 import { CenterHr } from "@/components/hr";
+import ProjectList from "@/components/items/projectList";
 
 const Page = async () => {
   metadata.title = "Beranda";
@@ -35,6 +36,12 @@ const Page = async () => {
         </h1>
 
         <AppList />
+
+        <h1 className="text-xl lg:text-2xl font-bold font-paprika mb-2 mt-8">
+          Proyek
+        </h1>
+
+        <ProjectList />
       </section>
     </div>
   );
