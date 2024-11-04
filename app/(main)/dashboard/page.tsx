@@ -26,9 +26,8 @@ const Page = async () => {
         className="w-full lg:rounded-lg max-h-[230px] lg:max-h-[320px] object-cover"
       />
 
+      <News />
       <section className="px-7 mt-5 pb-5">
-        <News />
-
         <CenterHr text="Menu" />
 
         <h1 className="text-xl lg:text-2xl font-bold font-paprika mb-2">

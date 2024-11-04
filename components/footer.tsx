@@ -16,12 +16,14 @@ const sosmed = [
   },
 ];
 
-const Footer = () => {
+const Footer = ({ className }: { className?: string }) => {
   return (
-    <footer className="bg-primary-950 w-full pt-[5rem] pb-[5rem] text-slate-400 text-xl shadow">
+    <footer
+      className={`${className} bg-primary-950 w-full pt-[5rem] pb-[5rem] text-slate-400 text-base shadow`}
+    >
       <div className="px-[6vw] md:px-[3.8vw] lg:px-[2.5vw] xl:px-[3.3vw] 2xl:px-[17.5%]">
         <h1 className="font-semibold text-2xl text-slate-400">Kontak</h1>
-        <ul className="flex flex-row lg:flex-col mt-[2.1vh] gap-[0.4rem]">
+        <ul className="flex flex-col mt-[2.1vh] gap-[0.4rem]">
           {sosmed
             .sort((a, b) => a.name.localeCompare(b.name))
             .map((a, i) => {

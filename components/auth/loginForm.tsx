@@ -16,7 +16,7 @@ const LoginForm = () => {
       <form action={formAction} className="w-full">
         {state?.message ? (
           <div
-            className="p-4 mb-4 text-rose-800 rounded bg-rose-200"
+            className="p-4 mb-3 text-rose-800 rounded bg-rose-200"
             role="alert"
           >
             <span className="font-medium ">{state?.message}</span>
@@ -29,8 +29,8 @@ const LoginForm = () => {
         <input
           type="email"
           name="email"
-          placeholder="Email kamu"
-          className="w-full block bg-slate-400 text-slate-700 outline-none px-3 py-2 rounded-lg placeholder:text-slate-700"
+          placeholder="Email anda tuan"
+          className="w-full block bg-slate-400/40 isolate text-slate-200 outline-none px-3 py-2 rounded-lg placeholder:text-slate-300"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -38,14 +38,14 @@ const LoginForm = () => {
           </span>
         </div>
 
-        <label htmlFor="password" className="block text-base lg:text-lg mt-5">
+        <label htmlFor="password" className="block text-base lg:text-lg mt-2">
           Sandi
         </label>
         <input
           type="password"
           name="password"
-          placeholder="Isi sandi"
-          className="w-full block bg-slate-400 text-slate-700 outline-none px-3 py-2 rounded-lg placeholder:text-slate-700"
+          placeholder="Sandimu tuan"
+          className="w-full block bg-slate-400/40 isolate text-slate-200 outline-none px-3 py-2 rounded-lg placeholder:text-slate-300"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -55,7 +55,7 @@ const LoginForm = () => {
         <LoginButton />
       </form>
 
-      <span className="text-slate-400 mt-4 block">
+      <span className="text-slate-400 mt-2 block">
         Belum punya akun?{" "}
         <Link href="/register" className="text-teal-400">
           Daftar

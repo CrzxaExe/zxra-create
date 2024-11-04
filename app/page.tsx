@@ -21,70 +21,70 @@ export default function Home() {
   return (
     <>
       <section className="container max-w-screen-xl pt-10">
-        <div className="flex flex-row items-center justify-center -mt-12 lg:mt-[7vh] 2xl:mt-[5vh]">
-          <div className="px-3 py-5 w-full flex items-center justify-center flex-col lg:flex-row lg:-ml-[3rem]">
-            <Image
-              alt="logo"
-              src={logo}
-              width={300}
-              height={300}
-              className="-mb-[4.9rem] lg:-mb-[2.3rem] aspect-square w-[24rem] lg:w-[16rem] 2xl:w-[27rem] -mr-[0.5rem] lg:mr-[0.4rem] transition-all duration-300 ease-in-out"
-            />
-            <h1 className="opacity-0 lg:opacity-100 font-valorant text-6xl lg:text-7xl 2xl:text-8xl -ml-[2rem] lg:-ml-[3.4rem] 2xl:-ml-[4.4rem] -mt-[8rem] lg:mt-[3rem] transition-all duration-300 ease-in-out">
-              Zxra <span className="hidden xl:inline">Create</span>
-            </h1>
+        <div className="min-h-screen overflow-hidden">
+          <div className="flex flex-row items-center justify-center -mt-12 lg:mt-[7vh] 2xl:mt-[5vh]">
+            <div className="px-3 py-5 w-full flex items-center justify-center flex-col lg:flex-row lg:-ml-[3rem]">
+              <Image
+                alt="logo"
+                src={logo}
+                width={300}
+                height={300}
+                className="-mb-[4.9rem] lg:-mb-[2.3rem] aspect-square w-[24rem] lg:w-[16rem] 2xl:w-[27rem] -mr-[0.5rem] lg:mr-[0.4rem] transition-all duration-300 ease-in-out"
+              />
+              <h1 className="opacity-0 lg:opacity-100 font-valorant text-6xl lg:text-7xl 2xl:text-8xl -ml-[2rem] lg:-ml-[3.4rem] 2xl:-ml-[4.4rem] -mt-[8rem] lg:mt-[3rem] transition-all duration-300 ease-in-out">
+                Create Zx
+              </h1>
+            </div>
+          </div>
+          <div className="px-7 lg:mt-[3vh] 2xl:-mt-[1rem]">
+            <h2 className="lg:text-center w-full text-slate-200 text-4xl md:text-5xl lg:text-6xl 2xl:text-6xl mt-[4rem] lg:-mt-[2rem] font-paprika font-semibold pr-[15%] lg:pr-0 flex items-end lg:mx-[18%] xl:mx-[18rem] 2xl:mx-[19rem]">
+              Eazier your life with us
+              <Image
+                alt="star"
+                src={star}
+                width={29}
+                height={29}
+                className="ml-2 hidden lg:inline"
+              />
+            </h2>
+            <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl 2xl:px-[5rem] w-full text-justify lg:text-center lg:px-14 whitespace-normal mb-5 mt-[12vh] xl:mt-12 lg:mt-2 font-geistMono text-slate-400">
+              Aplikasi super dengan berbagai macam aplikasi dan utilitas yang
+              lain
+            </p>
+            <div className="w-full flex flex-row lg:justify-center gap-4 mt-[4vh] lg:mt-[1.2rem] 2xl:mt-[2.4rem]">
+              <Link
+                href="/login"
+                className="block w-fit px-8 py-3 text-xl border border-slate-400 text-slate-400 rounded-3xl hover:bg-slate-400 hover:text-primary-800 transition-all duration-300 ease-in-out"
+              >
+                Masuk
+              </Link>
+              <Link
+                href="/register"
+                className="block w-fit px-8 py-3 text-xl bg-slate-400 border border-slate-400 text-primary-800 hover:text-slate-400 rounded-3xl hover:bg-transparent transition-all duration-300 ease-in-out"
+              >
+                Daftar
+              </Link>
+            </div>
+            <p className="mt-[8vh] md:mt-[6vh] 2xl:mt-[2rem] text-slate-600 w-full px-6 lg:text-center font-geistMono">
+              V{mks.version}
+            </p>
+
+            <p className="mt-[7vh] md:mt-[10vh] 2xl:mt-[1.8rem] mb-[6vh] lg:mb-[3.6rem] 2xl:mb-[4.3rem] text-slate-400 w-full px-6 lg:text-center font-geistMono">
+              Scroll kebawah untuk lihat selengkapnya
+            </p>
           </div>
         </div>
-        <div className="px-7 lg:mt-[3vh] 2xl:-mt-[1rem]">
-          <h2 className="lg:text-center w-full text-slate-200 text-4xl md:text-5xl lg:text-6xl 2xl:text-6xl mt-[4rem] lg:-mt-[2rem] font-paprika font-semibold pr-[15%] lg:pr-0 flex items-end lg:mx-[28%] xl:mx-[22rem] 2xl:mx-[19rem]">
-            Eazier your life with us
-            <Image
-              alt="star"
-              src={star}
-              width={29}
-              height={29}
-              className="ml-2 hidden lg:inline"
-            />
-          </h2>
-          <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl 2xl:px-[5rem] w-full text-justify lg:text-center lg:px-14 whitespace-normal mb-5 mt-[6vh] xl:mt-12 lg:mt-2 font-geistMono text-slate-400">
-            Hanya grup biasa yang menciptakan sesuatu hal yang berhubungan
-            dengan bahasa pemrograman dan juga pergambaran yang mungkin bisa
-            menjadi ref kalian
-          </p>
-          <div className="w-full flex flex-row lg:justify-center gap-4 mt-[4vh] lg:mt-[1.2rem] 2xl:mt-[2.4rem]">
-            <Link
-              href="/login"
-              className="block w-fit px-8 py-3 text-xl border border-slate-400 text-slate-400 rounded-3xl hover:bg-slate-400 hover:text-primary-800 transition-all duration-300 ease-in-out"
-            >
-              Masuk
-            </Link>
-            <Link
-              href="/register"
-              className="block w-fit px-8 py-3 text-xl bg-slate-400 border border-slate-400 text-primary-800 hover:text-slate-400 rounded-3xl hover:bg-transparent transition-all duration-300 ease-in-out"
-            >
-              Daftar
-            </Link>
-          </div>
-        </div>
-
-        <p className="mt-[8vh] md:mt-[6vh] 2xl:mt-[2rem] text-slate-600 w-full px-6 lg:text-center font-geistMono">
-          V{mks.version}
-        </p>
-
-        <p className="mt-[7vh] md:mt-[10vh] 2xl:mt-[1.8rem] mb-[6vh] lg:mb-[3.6rem] 2xl:mb-[4.3rem] text-slate-400 w-full px-6 lg:text-center font-geistMono">
-          Scroll kebawah untuk lihat selengkapnya
-        </p>
 
         <CenterHr text="Ringkasan" className="px-8" />
 
-        <section className="px-7 mt-12 py-3 mb-8">
+        <section className="px-7 mt-12 py-3 pt-10 mb-8 min-h-screen">
           <div className="flex flex-wrap gap-1">
             <div className="w-full md:w-[49%] md:pr-1">
               <span className="text-slate-500 text-base lg:text-xl block mt-2">
                 Apa itu
               </span>
               <span className="text-3xl lg:text-5xl text-teal-500 font-bold font-paprika mb-2">
-                Zxra Create
+                Create Zx
               </span>
               <p className="text-slate-400 text-base lg:text-2xl text-justify">
                 Sebuah aplikasi website dan merupakan pengganti website Zxra
@@ -172,6 +172,12 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="min-h-screen bg-slate-900/70 text-slate-200 backdrop-blur-md isolate py-8 rounded-t-lg">
+          <h1 className="font-paprika px-3 w-full text-center font-bold text-lg">
+            Unggulan
+          </h1>
         </section>
       </section>
       <Footer />

@@ -14,7 +14,7 @@ const RegisterForm = () => {
       <form action={formAction} className="w-full">
         {state?.message ? (
           <div
-            className="p-4 mb-4 text-rose-800 rounded bg-rose-200"
+            className="p-4 mb-3 text-rose-800 rounded bg-rose-200"
             role="alert"
           >
             <span className="font-medium ">{state?.message}</span>
@@ -27,8 +27,8 @@ const RegisterForm = () => {
         <input
           type="text"
           name="name"
-          placeholder="Nama kamu"
-          className="w-full block bg-slate-400 text-slate-700 outline-none px-3 py-2 rounded-lg placeholder:text-slate-700"
+          placeholder="Hey siapa namamu tuan"
+          className="w-full block bg-slate-400/40 isolate text-slate-200 outline-none px-3 py-2 rounded-lg placeholder:text-slate-300"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -36,14 +36,14 @@ const RegisterForm = () => {
           </span>
         </div>
 
-        <label htmlFor="email" className="block text-base lg:text-lg mt-5">
+        <label htmlFor="email" className="block text-base lg:text-lg mt-2">
           Email
         </label>
         <input
           type="email"
           name="email"
-          placeholder="Email kamu"
-          className="w-full block bg-slate-400 text-slate-700 outline-none px-3 py-2 rounded-lg placeholder:text-slate-700"
+          placeholder="Emailmu tuan"
+          className="w-full block bg-slate-400/40 isolate text-slate-200 outline-none px-3 py-2 rounded-lg placeholder:text-slate-300"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -51,14 +51,14 @@ const RegisterForm = () => {
           </span>
         </div>
 
-        <label htmlFor="password" className="block text-base lg:text-lg mt-5">
+        <label htmlFor="password" className="block text-base lg:text-lg mt-2">
           Sandi
         </label>
         <input
           type="password"
           name="password"
-          placeholder="Isi sandi"
-          className="w-full block bg-slate-400 text-slate-700 outline-none px-3 py-2 rounded-lg placeholder:text-slate-700"
+          placeholder="Sandimu"
+          className="w-full block bg-slate-400/40 isolate text-slate-200 outline-none px-3 py-2 rounded-lg placeholder:text-slate-300"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -68,15 +68,15 @@ const RegisterForm = () => {
 
         <label
           htmlFor="ComfirmPassword"
-          className="block text-base lg:text-lg mt-5"
+          className="block text-base lg:text-lg mt-3"
         >
           Konfirmasi Sandi
         </label>
         <input
           type="password"
           name="ConfirmPassword"
-          placeholder="Isi konfirmasi sandi"
-          className="w-full block bg-slate-400 text-slate-700 outline-none px-3 py-2 rounded-lg placeholder:text-slate-700"
+          placeholder="Isi lagi sandimu"
+          className="w-full block bg-slate-400/40 isolate text-slate-200 outline-none px-3 py-2 rounded-lg placeholder:text-slate-300"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -86,7 +86,7 @@ const RegisterForm = () => {
         <RegisterButton />
       </form>
 
-      <span className="text-slate-400 mt-4 block">
+      <span className="text-slate-400 mt-3 block">
         Sudah punya akun?{" "}
         <Link href="/login" className="text-teal-400">
           Masuk

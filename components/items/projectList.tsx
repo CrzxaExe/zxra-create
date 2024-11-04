@@ -1,26 +1,40 @@
+"use server";
 import React from "react";
 import { Card } from "./card";
+import axios from "axios";
 
-const project = [
-  { name: "Test", href: "ahok" },
-  { name: "Test", href: "ahok" },
-  { name: "Test", href: "ahok" },
-  { name: "Test", href: "ahok" },
-];
+type Projects = {
+  name: string;
+  app: string;
+  version: string;
+  des: string;
+  longDes: string;
+  lang: Array<string>;
+  framework: Array<string>;
+  href: string;
+  img: string;
+  status: number;
+};
 
-const ProjectList = () => {
+const ProjectList = async () => {
+  const project = (await axios.get("http://localhost:3000/api/project")) || [];
+
   return (
     <div className={`block`}>
       <ul
         className={`grid grid-cols-4 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-8 gap-2.5`}
       >
-        {project.map((e, i) => {
-          return (
-            <li className="aspect-square]" key={i}>
-              <Card nm={e.name} href={e.href}></Card>
-            </li>
-          );
-        })}
+        {project.data
+          .sort((a: { name: string }, b: { name: string }) =>
+            a.name.localeCompare(b.name)
+          )
+          .map((e: Projects, i: React.Key | null | undefined) => {
+            return (
+              <li className="aspect-square" key={i}>
+                <Card data={e}></Card>
+              </li>
+            );
+          })}
       </ul>
     </div>
   );

@@ -5,13 +5,13 @@ import Cz from "@/app/asset/dashboard/cz.jpg";
 
 const News = () => {
   return (
-    <div className="w-full overflow-hidden mt-3 md:-mt-2 lg:-mt-[5.4rem] mb-7 relative flex md:flex-row transition-all duration-300 ease-in-out">
+    <div className="w-full overflow-hidden mt-5 md:pb-5 md:px-7 md:-mt-2 lg:-mt-[5.4rem] mb-7 relative flex md:flex-row transition-all duration-300 ease-in-out">
       <Image
         src={Cz}
         alt="News"
         width={400}
         height={300}
-        className="w-full md:max-w-[60%] transition-all duration-300 ease-in-out rounded-lg md:rounded-r-none relative"
+        className="w-full md:max-w-[60%] transition-all duration-300 ease-in-out md:rounded-lg md:rounded-r-none relative"
       />
       <div className="absolute md:relative -left-4 top-0 md:px-4 w-full h-full md:ml-4 md:bg-[#262c3a]/[0.7] md:backdrop-blur-sm md:h-[32vw] md:max-h-[250px] lg:max-h-[200px]">
         <h1 className="inline ml-2 md:ml-0 px-3 py-8 font-paprika text-base md:text-lg xl:text-xl">

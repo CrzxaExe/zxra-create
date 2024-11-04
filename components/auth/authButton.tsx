@@ -10,7 +10,7 @@ export const AuthButton = async () => {
     >
       <button
         type="submit"
-        className="px-3 py-2 bg-rose-400 text-black font-semibold mt-2"
+        className="px-3 py-2 bg-rose-400 text-black font-semibold my-2 rounded-lg"
       >
         Keluar
       </button>
@@ -35,7 +35,7 @@ export const GithubLoginButton = ({
     >
       <button
         type="submit"
-        className={`${className} w-full bg-slate-700 px-5 text-center py-3 mt-5 rounded-lg text-slate-400`}
+        className={`${className} w-full bg-black px-5 text-center py-3 mt-2 rounded-lg text-white`}
       >
         {children}
       </button>
