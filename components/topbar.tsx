@@ -19,7 +19,7 @@ const Topbar = ({
 
   return (
     <>
-      <div className="fixed top-0 w-full bg-primary-300/[0.3] hover:bg-primary-300/[0.5] px-7 2xl:px-[4rem] py-4 shadow transition-all duration-200 ease-out flex flex-row justify-between z-[100]">
+      <div className="fixed top-0 w-full bg-primary-300/[0.4] hover:bg-primary-300/[0.58] px-7 2xl:px-[4rem] py-4 shadow transition-all duration-200 ease-out flex flex-row justify-between z-[100]">
         <div className="flex flex-row items-center">
           <SidebarButton func={setOpen} />
           <span className={`${home ? "hidden" : ""} text-2xl font-valorant`}>

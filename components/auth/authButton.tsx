@@ -1,4 +1,5 @@
 import { signIn, signOut } from "@/auth";
+import { LogoutOutlined } from "@mui/icons-material";
 
 export const AuthButton = async () => {
   return (
@@ -10,9 +11,9 @@ export const AuthButton = async () => {
     >
       <button
         type="submit"
-        className="px-3 py-2 bg-rose-400 text-black font-semibold my-2 rounded-lg"
+        className="px-3 py-2 mt-4 mb-7 bg-rose-400 text-black font-semibold my-2 rounded-lg"
       >
-        Keluar
+        <LogoutOutlined /> Keluar
       </button>
     </form>
   );

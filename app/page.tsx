@@ -16,8 +16,11 @@ import { CenterHr } from "@/components/hr";
 
 import mks from "@/package.json";
 import Footer from "@/components/footer";
+import { metadata } from "./layout";
 
 export default function Home() {
+  metadata.title = "Create Zx";
+
   return (
     <>
       <section className="container max-w-screen-xl pt-10">
@@ -174,10 +177,17 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="min-h-screen bg-slate-900/70 text-slate-200 backdrop-blur-md isolate py-8 rounded-t-lg">
-          <h1 className="font-paprika px-3 w-full text-center font-bold text-lg">
-            Unggulan
+        <section className="min-h-screen bg-slate-900/70 text-slate-200 backdrop-blur-md isolate py-12 rounded-t-lg">
+          <h1 className="font-paprika w-full text-center lg:text-left font-bold text-xl px-7">
+            Kenapa Baru?
           </h1>
+
+          <p className="mt-5 text-sm lg:text-base font-paprika px-7">
+            Kami membuat baru web app ini dengan tujuan untuk meningkatkan
+            kualitas aplikasi kami dan juga keahlian kami serta merubah
+            framework yang lebih superior. Selain itu juga sebagai media
+            pembelajaran kami yaitu dengan mendevelop projek ini.
+          </p>
         </section>
       </section>
       <Footer />

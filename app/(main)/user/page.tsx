@@ -16,7 +16,7 @@ const Page = async () => {
 
   return (
     <div className="mt-[6rem] max-w-screen-lg px-10 mx-auto">
-      <div className="w-full max-h-[200px] h-[14vw] bg-slate-400"></div>
+      <div className="w-full max-h-[250px] h-[14.7vw] bg-slate-500"></div>
 
       <div className="w-full -mt-[6.7vw] px-[1.5rem] flex flex-row items-center gap-[2.4vw]">
         <Image
@@ -31,12 +31,25 @@ const Page = async () => {
         </h1>
       </div>
 
-      <div className="w-full px-[2.3rem] py-[2vh] bg-slate-900/[0.7] mt-5 rounded-lg">
+      <div className="inline-flex flex-row mt-5 gap-2">
+        <button className="px-3 py-2 bg-cyan-600 rounded-lg text-sm hover:bg-cyan-700 active:bg-cyan-400 hover:text-gray-200 active:text-gray-800">
+          Ubah Foto Profil
+        </button>
+        <button className="px-3 py-2 bg-cyan-600 rounded-lg text-sm hover:bg-cyan-700 active:bg-cyan-400 hover:text-gray-200 active:text-gray-800">
+          Ubah Foto Banner
+        </button>
+      </div>
+
+      <div className="w-full px-[2.3rem] py-[2vh] bg-slate-900/[0.4] backdrop-blur-lg mt-5 rounded-lg">
+        <h1 className="text-xl mb-5 font-paprika font-semibold text-slate-300">
+          Tentangmu
+        </h1>
+
         <h1 className="test-base mt-2">ID</h1>
         <input
           type="text"
           value={user?.id || session?.user?.id || "-"}
-          className="bg-slate-950 text-slate-400 px-3 py-2 w-full outline-none rounded-lg"
+          className="bg-slate-800 text-slate-400 px-3 py-2 w-full outline-none rounded-lg"
           readOnly
         />
 
@@ -44,7 +57,7 @@ const Page = async () => {
         <input
           type="text"
           value={user?.email || session?.user?.email || "none@gmail.com"}
-          className="bg-slate-950 text-slate-400 px-3 py-2 w-full outline-none rounded-lg"
+          className="bg-slate-800 text-slate-400 px-3 py-2 w-full outline-none rounded-lg"
           readOnly
         />
 

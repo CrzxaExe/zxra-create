@@ -1,7 +1,7 @@
 "use server";
+
 import React from "react";
 import { Card } from "./card";
-import axios from "axios";
 
 type Projects = {
   name: string;
@@ -16,15 +16,14 @@ type Projects = {
   status: number;
 };
 
-const ProjectList = async () => {
-  const project = (await axios.get("http://localhost:3000/api/project")) || [];
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ProjectList = async ({ project }: { project: any }) => {
   return (
     <div className={`block`}>
       <ul
         className={`grid grid-cols-4 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-8 gap-2.5`}
       >
-        {project.data
+        {project.data.project
           .sort((a: { name: string }, b: { name: string }) =>
             a.name.localeCompare(b.name)
           )
