@@ -9,7 +9,7 @@ const Searchbar = () => {
       </button>
       <textarea
         placeholder="Cari apa?"
-        className="px-1 pr-5 outline-none max-w-screen-md h-[32px] bg-transparent py-[3px] overflow-y-hidden overflow-x-clip resize-none"
+        className="px-1 pr-3 outline-none max-w-screen-md h-[31px] bg-transparent py-[2px] overflow-y-hidden overflow-x-clip resize-none"
       ></textarea>
     </div>
   );

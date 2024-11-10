@@ -27,9 +27,6 @@ const TopbarOther = ({
         </li>
         {full && (
           <>
-            <li className="flex items-center">
-              <Searchbar />
-            </li>
             <li>
               <TopbarButton
                 href="/dashboard"
@@ -47,6 +44,9 @@ const TopbarOther = ({
               >
                 <PeopleOutline />
               </TopbarButton>
+            </li>
+            <li className="flex items-center">
+              <Searchbar />
             </li>
           </>
         )}

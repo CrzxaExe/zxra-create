@@ -1,8 +1,9 @@
 import React from "react";
+import mks from "@/package.json";
 
 const Page = () => {
   return (
-    <div className="py-6 mt-[5rem] max-w-screen-lg mx-auto mb-[2rem]">
+    <div className="py-6 mt-[5rem] max-w-screen-xl mx-auto mb-[2rem]">
       <h1 className="text-3xl text-teal-400 font-semibold px-5">
         Tentang Kami
       </h1>
@@ -65,20 +66,68 @@ const Page = () => {
         <span className="text-slate-400">Zxra Super App</span>
 
         <div className="mt-7">
+          <h1 className="text-slate-500 text-2xl font-semibold">
+            Bahasa Pemrograman
+          </h1>
+          <p className="mt-3 mb-3 font-paprika text-slate-200 text-justify">
+            Web App ini menggunakan beberapa bahasa pemrograman seperti
+            TypeScript, JavaScript Serta Babel
+          </p>
+
           <h1 className="text-slate-500 text-2xl font-semibold">Integrasi</h1>
           <p className="mt-3 font-paprika text-slate-200 text-justify">
             Web App ini hampir terintegrasi ke semua layanan yang kami sediakan
             seperti contoh:
           </p>
-          <ul className="mt-1 list-item">
-            <li className="before:content-['>'] pl-4 font-thin">Cz DB</li>
-            <li className="before:content-['>'] pl-4 font-thin">
+          <ul className="mt-1 list-item mb-3">
+            <li className="before:content-['>'] before:pr-2 pl-2 font-thin">
+              Cz DB
+            </li>
+            <li className="before:content-['>'] before:pr-2 pl-2 font-thin">
               Zxra Elysia API
             </li>
-            <li className="before:content-['>'] pl-4 font-thin">
+            <li className="before:content-['>'] before:pr-2 pl-2 font-thin">
               Zxra Rest API
             </li>
           </ul>
+
+          <h1 className="text-slate-500 text-2xl font-semibold">Lib</h1>
+          <p className="mt-3 font-paprika text-slate-200 text-justify">
+            Module dan library yang kami gunakan untuk membangun web app ini
+            sampai terlihat seperti ini yaitu:
+          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div>
+              <p className="mt-3 font-paprika text-slate-200 text-justify">
+                Dependensi:
+              </p>
+              <ul className="mt-1 list-item">
+                {Object.keys(mks.dependencies).map((a, i) => (
+                  <li
+                    className="before:content-['>'] before:pr-2 pl-2 font-thin"
+                    key={i}
+                  >
+                    {a}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="mt-3 font-paprika text-slate-200 text-justify">
+                Dev Dependensi:
+              </p>
+              <ul className="mt-1 list-item">
+                {Object.keys(mks.devDependencies).map((a, i) => (
+                  <li
+                    className="before:content-['>'] before:pr-2 pl-2 font-thin"
+                    key={i}
+                  >
+                    {a}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </div>

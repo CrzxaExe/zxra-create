@@ -19,7 +19,7 @@ export const Sidebar = ({ open, func }: { open: boolean; func: any }) => {
 export const SidebarButton = ({ func }: { func: any }) => {
   return (
     <button onClick={() => func(true)}>
-      <Image alt="logo-full" src={LogoFull} width={35} height={4} />
+      <Image alt="logo-full" src={LogoFull} width={50} height={9} />
     </button>
   );
 };

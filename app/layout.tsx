@@ -41,6 +41,12 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <link
+          href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+          rel="stylesheet"
+        ></link>
+      </head>
       <body
         suppressHydrationWarning={true}
         className={`${geistSans.variable} ${geistMono.variable} ${valorant.variable} ${paprika} bg-gradient-to-br  from-primary-900 to-primary-800 text-white`}

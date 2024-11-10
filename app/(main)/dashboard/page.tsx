@@ -29,15 +29,19 @@ const Page = async () => {
     },
   };
 
+  const news = (await axios.get("https://zxra-rest.vercel.app/news")) || {
+    data: { result: [] },
+  };
+
   return (
-    <div className="lg:mt-[6rem] max-w-screen-lg mx-auto pb-7">
+    <div className="lg:mt-[6rem] max-w-screen-xl mx-auto">
       <Img
         src="https://raw.githubusercontent.com/CrzxaExe/CzWeb/main/img/heads.png"
         alt="head"
-        className="w-full lg:rounded-lg max-h-[230px] lg:max-h-[320px] object-cover"
+        className="w-full lg:rounded-lg max-h-[230px] lg:max-h-[340px] object-cover"
       />
 
-      <News />
+      <News news={news.data.result[0]} />
 
       <section className="my-4">
         <Clock />

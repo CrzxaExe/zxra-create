@@ -15,7 +15,7 @@ const Page = async () => {
   metadata.title = session?.user?.name || "User";
 
   return (
-    <div className="mt-[6rem] max-w-screen-lg px-10 mx-auto">
+    <div className="mt-[6rem] max-w-screen-xl px-10 mx-auto">
       <div className="w-full max-h-[250px] h-[14.7vw] bg-slate-500"></div>
 
       <div className="w-full -mt-[6.7vw] px-[1.5rem] flex flex-row items-center gap-[2.4vw]">

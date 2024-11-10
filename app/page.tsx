@@ -26,13 +26,13 @@ export default function Home() {
       <section className="container max-w-screen-xl pt-10">
         <div className="min-h-screen overflow-hidden">
           <div className="flex flex-row items-center justify-center -mt-12 lg:mt-[7vh] 2xl:mt-[5vh]">
-            <div className="px-3 py-5 w-full flex items-center justify-center flex-col lg:flex-row lg:-ml-[3rem]">
+            <div className="px-3 py-5 w-full flex items-center justify-center flex-col lg:flex-row lg:-ml-[3.2rem]">
               <Image
                 alt="logo"
                 src={logo}
                 width={300}
                 height={300}
-                className="-mb-[4.9rem] lg:-mb-[2.3rem] aspect-square w-[24rem] lg:w-[16rem] 2xl:w-[27rem] -mr-[0.5rem] lg:mr-[0.4rem] transition-all duration-300 ease-in-out"
+                className="-mb-[4.9rem] lg:-mb-[2.3rem] aspect-square w-[18rem] lg:w-[16rem] 2xl:w-[27rem] -mr-[0.5rem] lg:mr-[0.4rem] transition-all duration-300 ease-in-out"
               />
               <h1 className="opacity-0 lg:opacity-100 font-valorant text-6xl lg:text-7xl 2xl:text-8xl -ml-[2rem] lg:-ml-[3.4rem] 2xl:-ml-[4.4rem] -mt-[8rem] lg:mt-[3rem] transition-all duration-300 ease-in-out">
                 Create Zx
@@ -40,7 +40,7 @@ export default function Home() {
             </div>
           </div>
           <div className="px-7 lg:mt-[3vh] 2xl:-mt-[1rem]">
-            <h2 className="lg:text-center w-full text-slate-200 text-4xl md:text-5xl lg:text-6xl 2xl:text-6xl mt-[4rem] lg:-mt-[2rem] font-paprika font-semibold pr-[15%] lg:pr-0 flex items-end lg:mx-[18%] xl:mx-[18rem] 2xl:mx-[19rem]">
+            <h2 className="lg:text-center w-full text-slate-200 text-3xl md:text-4xl lg:text-5xl mt-[4rem] lg:-mt-[2rem] font-paprika font-semibold flex items-end lg:justify-center">
               Eazier your life with us
               <Image
                 alt="star"
@@ -50,9 +50,9 @@ export default function Home() {
                 className="ml-2 hidden lg:inline"
               />
             </h2>
-            <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl 2xl:px-[5rem] w-full text-justify lg:text-center lg:px-14 whitespace-normal mb-5 mt-[12vh] xl:mt-12 lg:mt-2 font-geistMono text-slate-400">
-              Aplikasi super dengan berbagai macam aplikasi dan utilitas yang
-              lain
+            <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl 2xl:px-[5rem] w-full text-justify lg:text-center lg:px-14 whitespace-normal mb-5 mt-[6vh] xl:mt-12 lg:mt-2 font-geistMono text-slate-400">
+              Super Apps yang menghubungkan berbagai macam aplikasi kami dan
+              memusatkan semuanya pada 1 aplikasi ini.
             </p>
             <div className="w-full flex flex-row lg:justify-center gap-4 mt-[4vh] lg:mt-[1.2rem] 2xl:mt-[2.4rem]">
               <Link
@@ -72,13 +72,14 @@ export default function Home() {
               V{mks.version}
             </p>
 
-            <p className="mt-[7vh] md:mt-[10vh] 2xl:mt-[1.8rem] mb-[6vh] lg:mb-[3.6rem] 2xl:mb-[4.3rem] text-slate-400 w-full px-6 lg:text-center font-geistMono">
-              Scroll kebawah untuk lihat selengkapnya
+            <p className="mt-[7vh] md:mt-[10vh] 2xl:mt-[1.8rem] mb-[6vh] lg:mb-[3.6rem] 2xl:mb-[4.3rem] text-slate-400 w-full px-6 font-geistMono flex flex-row lg:justify-center items-center">
+              Scroll kebawah untuk lihat selengkapnya{" "}
+              <i className="bx bx-down-arrow-alt text-xl"></i>
             </p>
           </div>
         </div>
 
-        <CenterHr text="Ringkasan" className="px-8" />
+        <CenterHr text="Bawah" className="px-8" />
 
         <section className="px-7 mt-12 py-3 pt-10 mb-8 min-h-screen">
           <div className="flex flex-wrap gap-1">
@@ -124,41 +125,45 @@ export default function Home() {
               />
             </div>
 
+            <span className="text-3xl lg:text-5xl text-teal-500 font-bold font-paprika mt-6">
+              Apa Yang Beda?
+            </span>
+
             <div className="w-full mt-2 lg:mt-5">
               <div className="flex flex-wrap w-full gap-5">
                 <div className="w-[47.2%] md:w-[31.4%] lg:w-[23.5%] rounded-xl py-2 relative">
-                  <div className="flex flex-row items-end text-slate-400 gap-2">
+                  <div className="flex flex-row items-center text-slate-400 gap-2">
                     <BoltOutlined className="text-2xl lg:text-3xl aspect-square" />
                     <b className="text-xl lg:text-2xl font-geistSans">
                       Cepat & Kuat
                     </b>
                   </div>
-                  <p className="text-slate-400 mt-1 text-sm lg:text-base 2xl:text-lg">
+                  <p className="text-slate-400 mt-1 px-2 text-sm lg:text-base 2xl:text-lg">
                     Kinerja website lebih cepat untuk memproses dan lebih
                     powerfull.
                   </p>
                 </div>
 
                 <div className="w-[47.2%] md:w-[31.4%] lg:w-[23.5%] rounded-xl py-2 relative">
-                  <div className="flex flex-row items-end text-slate-400 gap-2">
+                  <div className="flex flex-row items-center text-slate-400 gap-2">
                     <GradeOutlined className="text-2xl lg:text-3xl aspect-square" />
                     <b className="text-xl lg:text-2xl font-geistSans">
                       Bersih & Simpel
                     </b>
                   </div>
-                  <p className="text-slate-400 mt-1 text-sm lg:text-base 2xl:text-lg">
+                  <p className="text-slate-400 mt-1 px-2 text-sm lg:text-base 2xl:text-lg">
                     Tampilan lebih bersih dipadukan dengan desain minimalist.
                   </p>
                 </div>
 
                 <div className="w-[47.2%] md:w-[31.4%] lg:w-[23.5%] rounded-xl py-2 relative">
-                  <div className="flex flex-row items-end text-slate-400 gap-2">
+                  <div className="flex flex-row items-center text-slate-400 gap-2">
                     <AspectRatioOutlined className="text-2xl lg:text-3xl aspect-square" />
                     <b className="text-xl lg:text-2xl font-geistSans">
                       Responsif
                     </b>
                   </div>
-                  <p className="text-slate-400 mt-1 text-sm lg:text-base 2xl:text-lg">
+                  <p className="text-slate-400 mt-1 px-2 text-sm lg:text-base 2xl:text-lg">
                     Tampilan akan menyesuaikan dengan ukuran layar anda.
                   </p>
                 </div>
@@ -168,25 +173,27 @@ export default function Home() {
                     <UpgradeOutlined className="text-2xl lg:text-3xl aspect-square" />
                     <b className="text-xl lg:text-2xl font-geistSans">Modern</b>
                   </div>
-                  <p className="text-slate-400 mt-1 text-sm lg:text-base 2xl:text-lg">
+                  <p className="text-slate-400 mt-1 px-2 text-sm lg:text-base 2xl:text-lg">
                     Menggunakan teknologi yang lebih baru
                   </p>
                 </div>
               </div>
             </div>
           </div>
+          <CenterHr text="Scroll Kebawah" className="mt-[4rem]" />
         </section>
 
         <section className="min-h-screen bg-slate-900/70 text-slate-200 backdrop-blur-md isolate py-12 rounded-t-lg">
-          <h1 className="font-paprika w-full text-center lg:text-left font-bold text-xl px-7">
-            Kenapa Baru?
+          <h1 className="font-paprika w-full text-center lg:text-left font-bold text-2xl lg:text-3xl px-7 py-3">
+            Overview
           </h1>
 
-          <p className="mt-5 text-sm lg:text-base font-paprika px-7">
-            Kami membuat baru web app ini dengan tujuan untuk meningkatkan
-            kualitas aplikasi kami dan juga keahlian kami serta merubah
-            framework yang lebih superior. Selain itu juga sebagai media
-            pembelajaran kami yaitu dengan mendevelop projek ini.
+          <p className="mt-5 text-base lg:text-lg font-paprika px-7 text-justify">
+            Aplikasi ini memiliki banyak fitur baru dibanding dengan yang lama
+            salah satunya yaitu autentikasinya. User harus login untuk dapat
+            mengakses aplikasi didalamnya. Dalam Aplikasi ini memiliki banyak
+            library selain yang kami sebutkan disini. Aplikasi ini merupakan
+            aplikasi open source dan bisa kalian temukan di github owner kami.
           </p>
         </section>
       </section>

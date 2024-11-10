@@ -22,7 +22,7 @@ const UserButton = ({
         alt="Profile"
         width={300}
         height={300}
-        className="aspect-square w-[30px] h-[30px] rounded-full"
+        className="aspect-square w-[36px] h-[36px] lg:w-[30px] lg:h-[30px] rounded-full"
       />
       <h1 className="px-2 py-1.5 font-bold hidden lg:block">
         {session?.user ? "Anda" : "Tamu"}
