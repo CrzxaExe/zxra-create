@@ -1,7 +1,10 @@
 import React from "react";
 import mks from "@/package.json";
+import { metadata } from "@/app/layout";
 
 const Page = () => {
+  metadata.title = "Tentang";
+
   return (
     <div className="py-6 mt-[5rem] max-w-screen-xl mx-auto mb-[2rem]">
       <h1 className="text-3xl text-teal-400 font-semibold px-5">

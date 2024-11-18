@@ -12,7 +12,7 @@ const Page = async () => {
   const session = await auth();
   const user = await FindEmail(session?.user?.email || "");
 
-  metadata.title = session?.user?.name || "User";
+  metadata.title = user?.name || session?.user?.name;
 
   return (
     <div className="mt-[6rem] max-w-screen-xl px-10 mx-auto">
