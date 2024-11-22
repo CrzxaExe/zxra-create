@@ -15,6 +15,12 @@ const config: Config = {
           900: "#1f2430",
           950: "#1b1f29",
         },
+        base: {
+          upascent: "#FCE38A",
+          ascent: "#0E5F76",
+          upfloor: "#083D56",
+          floor: "#0C2233",
+        },
       },
       fontFamily: {
         valorant: ["var(--font-valorant)"],

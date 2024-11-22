@@ -1,7 +1,7 @@
 import { TopbarButton } from "./button";
-import { Login, Newspaper, PeopleOutline } from "@mui/icons-material";
+import { LoginRounded, SearchRounded } from "@mui/icons-material";
 import UserButton from "./auth/userButton";
-import Searchbar from "./items/searchbar";
+import Link from "next/link";
 
 const TopbarOther = ({
   full,
@@ -13,43 +13,23 @@ const TopbarOther = ({
 }) => {
   return (
     <div className="flex items-center">
-      <ul className="flex flex-row gap-2">
+      <ul className="flex flex-row gap-6 items-center">
+        <li className="block md:hidden">
+          <Link href="/search" className="flex justify-center items-center">
+            <SearchRounded />
+          </Link>
+        </li>
         <li>
           {!full && (
             <TopbarButton
               href="/login"
               text="Masuk"
-              className="flex flex-row items-center h-full"
+              className="bg-base-upascent hover:bg-base-ascent border-[1px] border-base-upascent text-base-floor hover:text-base-upascent rounded-lg py-1 px-1 lg:px-3 font-semibold"
             >
-              <Login />
+              <LoginRounded className="self-center -mt-1" />
             </TopbarButton>
           )}
         </li>
-        {full && (
-          <>
-            <li>
-              <TopbarButton
-                href="/dashboard"
-                text="Beranda"
-                className="flex flex-row items-center h-full"
-              >
-                <Newspaper />
-              </TopbarButton>
-            </li>
-            <li>
-              <TopbarButton
-                href="/about"
-                text="Tentang"
-                className="flex flex-row items-center h-full"
-              >
-                <PeopleOutline />
-              </TopbarButton>
-            </li>
-            <li className="flex items-center">
-              <Searchbar />
-            </li>
-          </>
-        )}
         <UserButton session={session} />
       </ul>
     </div>

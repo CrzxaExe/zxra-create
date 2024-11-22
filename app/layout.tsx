@@ -49,7 +49,7 @@ export default async function RootLayout({
       </head>
       <body
         suppressHydrationWarning={true}
-        className={`${geistSans.variable} ${geistMono.variable} ${valorant.variable} ${paprika} bg-gradient-to-br  from-primary-900 to-primary-800 text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} ${valorant.variable} ${paprika} bg-base-floor text-white`}
       >
         <Topbar full={session ? true : false} home={true} session={session} />
         {children}

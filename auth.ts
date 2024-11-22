@@ -50,7 +50,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks: {
     async authorized({ auth, request: { nextUrl } }) {
       const isLogin = !!auth?.user;
-      const ProtectedRoutes = ["/dashboard"];
+      const ProtectedRoutes = ["/user"];
 
       if (!isLogin && ProtectedRoutes.includes(nextUrl.pathname)) {
         return Response.redirect(new URL("/login", nextUrl));

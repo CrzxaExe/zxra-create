@@ -28,7 +28,7 @@ const News = ({ news }: { news: NewsData }) => {
             {title}
           </a>
           <span className="hidden md:flex font-bold text-lg px-4 flex-row items-center gap-3">
-            <i className="bx bx-news text-xl"></i>Berita
+            <i className="bx bx-news text-xl">Berita</i>
           </span>
         </h1>
 

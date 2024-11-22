@@ -1,15 +1,60 @@
 import { Drawer, Box } from "@mui/material";
-import Image from "next/image";
 import React from "react";
 
-import LogoFull from "@/app/asset/Zxra-full.png";
+// import LogoFull from "@/app/asset/Zxra-full.png";
+import {
+  Newspaper,
+  HomeRounded,
+  PeopleOutline,
+  ExploreRounded,
+} from "@mui/icons-material";
+import Link from "next/link";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const Sidebar = ({ open, func }: { open: boolean; func: any }) => {
+export const Sidebar = ({
+  open,
+  func,
+  size = 240,
+}: {
+  open: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  func: any;
+  size?: number;
+}) => {
   return (
     <Drawer open={open} onClose={() => func(false)}>
-      <Box sx={{ width: 250 }} role="presentation">
-        <div className="w-full min-h-screen bg-primary-950"></div>
+      <Box sx={{ width: size }} role="presentation">
+        <div className="w-full min-h-screen bg-base-upfloor">
+          <ul className="py-3">
+            <li className="w-full rounded-r-lg text-base-upascent text-base hover:bg-base-upascent transition-all duration-300 ease-in-out hover:pl-4 hover:text-base-upfloor">
+              <Link
+                href="/"
+                className="flex flex-row gap-4 items-center py-4 px-5"
+              >
+                <HomeRounded />
+                <span className="font-paprika font-bold">Home</span>
+              </Link>
+            </li>
+            <li className="w-full rounded-r-lg text-base-upascent text-base hover:bg-base-upascent transition-all duration-300 ease-in-out hover:pl-4 hover:text-base-upfloor">
+              <Link
+                href="/dashboard"
+                className="flex flex-row gap-4 items-center py-4 px-5"
+              >
+                <Newspaper />
+                <span className="font-paprika font-bold">Dashboard</span>
+              </Link>
+            </li>
+            <li className="w-full rounded-r-lg text-base-upascent text-base hover:bg-base-upascent transition-all duration-300 ease-in-out hover:pl-4 hover:text-base-upfloor">
+              <Link
+                href="/about"
+                className="flex flex-row gap-4 items-center py-4 px-5"
+              >
+                <PeopleOutline />
+                <span className="font-paprika font-bold">About</span>
+              </Link>
+            </li>
+            <li></li>
+          </ul>
+        </div>
       </Box>
     </Drawer>
   );
@@ -19,7 +64,8 @@ export const Sidebar = ({ open, func }: { open: boolean; func: any }) => {
 export const SidebarButton = ({ func }: { func: any }) => {
   return (
     <button onClick={() => func(true)}>
-      <Image alt="logo-full" src={LogoFull} width={50} height={9} />
+      <ExploreRounded className="text-3xl hover:rotate-45 transition-all duration-150 ease-in-out" />
+      {/* <Image alt="logo-full" src={LogoFull} width={40} height={9} /> */}
     </button>
   );
 };

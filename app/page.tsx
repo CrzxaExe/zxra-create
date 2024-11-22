@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import logo from "@/app/asset/Zxra.png";
-import star from "@/app/asset/star_half_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg";
+import logo from "@/app/asset/zx.png";
+import bgEffect from "@/app/asset/bg_effect.png";
 import SS from "@/app/asset/ss.png";
 
 import {
@@ -23,63 +23,60 @@ export default function Home() {
 
   return (
     <>
-      <section className="container max-w-screen-xl pt-10">
+      <Image
+        alt="effect"
+        src={bgEffect}
+        className="w-full -mb-[3rem] md:-mb-[5rem] lg:-mb-[8rem] xl:-mb-[12rem] 2xl:-mb-[21rem] object-contain opacity-50"
+      />
+      <section className="container max-w-screen-lg">
         <div className="min-h-screen overflow-hidden">
-          <div className="flex flex-row items-center justify-center -mt-12 lg:mt-[7vh] 2xl:mt-[5vh]">
-            <div className="px-3 py-5 w-full flex items-center justify-center flex-col lg:flex-row lg:-ml-[3.2rem]">
+          <div className="flex flex-row items-center justify-center mt-[6rem] lg:mt-[9vh] 2xl:mt-[12vh]">
+            <div className="px-3 py-5 w-full flex items-center justify-center flex-col lg:flex-row">
               <Image
                 alt="logo"
                 src={logo}
-                width={300}
-                height={300}
-                className="-mb-[4.9rem] lg:-mb-[2.3rem] aspect-square w-[18rem] lg:w-[16rem] 2xl:w-[27rem] -mr-[0.5rem] lg:mr-[0.4rem] transition-all duration-300 ease-in-out"
+                width={320}
+                height={320}
+                className=" w-[20rem] lg:w-[25rem] 2xl:w-[29rem] transition-all duration-300 ease-in-out"
               />
-              <h1 className="opacity-0 lg:opacity-100 font-valorant text-6xl lg:text-7xl 2xl:text-8xl -ml-[2rem] lg:-ml-[3.4rem] 2xl:-ml-[4.4rem] -mt-[8rem] lg:mt-[3rem] transition-all duration-300 ease-in-out">
-                Create Zx
-              </h1>
             </div>
           </div>
-          <div className="px-7 lg:mt-[3vh] 2xl:-mt-[1rem]">
-            <h2 className="lg:text-center w-full text-slate-200 text-3xl md:text-4xl lg:text-5xl mt-[4rem] lg:-mt-[2rem] font-paprika font-semibold flex items-end lg:justify-center">
-              Eazier your life with us
-              <Image
-                alt="star"
-                src={star}
-                width={29}
-                height={29}
-                className="ml-2 hidden lg:inline"
-              />
+          <div className="px-7 lg:mt-[1vh] 2xl:mt-[1rem]">
+            <h2 className="bg-gradient-to-r from-base-upascent to-base-ascent text-transparent bg-clip-text lg:text-center w-full text-5xl md:text-4xl lg:text-6xl mt-[3rem] lg:mt-[4rem] font-paprika font-semibold flex items-end lg:justify-center py-2">
+              Creating All Task Eazier Is Your Job
             </h2>
-            <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl 2xl:px-[5rem] w-full text-justify lg:text-center lg:px-14 whitespace-normal mb-5 mt-[6vh] xl:mt-12 lg:mt-2 font-geistMono text-slate-400">
+            <p className="text-lg max-w-screen-lg md:text-xl lg:text-2xl 2xl:px-[9.5rem] w-full text-justify lg:text-center lg:px-[4.3rem] whitespace-normal mb-5 mt-[2vh] xl:mt-12 lg:mt-2 font-geistMono text-slate-400 mx-auto">
               Super Apps yang menghubungkan berbagai macam aplikasi kami dan
               memusatkan semuanya pada 1 aplikasi ini.
             </p>
             <div className="w-full flex flex-row lg:justify-center gap-4 mt-[4vh] lg:mt-[1.2rem] 2xl:mt-[2.4rem]">
               <Link
                 href="/login"
-                className="block w-fit px-8 py-3 text-xl border border-slate-400 text-slate-400 rounded-3xl hover:bg-slate-400 hover:text-primary-800 transition-all duration-300 ease-in-out"
+                className="flex justify-center items-center w-fit px-5 lg:px-8 py-2.5 lg:py-3 text-xl border border-base-upascent text-base-upascent rounded-3xl hover:bg-base-upascent hover:text-base-upfloor font-bold transition-all duration-300 ease-in-out shadow-md"
               >
                 Masuk
               </Link>
               <Link
                 href="/register"
-                className="block w-fit px-8 py-3 text-xl bg-slate-400 border border-slate-400 text-primary-800 hover:text-slate-400 rounded-3xl hover:bg-transparent transition-all duration-300 ease-in-out"
+                className="flex justify-center items-center w-fit px-5 lg:px-8 py-2.5 lg:py-3 text-xl bg-base-upascent border border-base-upascent text-base-upfloor hover:text-base-upascent rounded-3xl hover:bg-transparent font-bold transition-all duration-300 ease-in-out shadow-md"
               >
                 Daftar
               </Link>
             </div>
-            <p className="mt-[8vh] md:mt-[6vh] 2xl:mt-[2rem] text-slate-600 w-full px-6 lg:text-center font-geistMono">
+            <p className="mt-[5vh] md:mt-[6vh] 2xl:mt-[2rem] text-slate-600 w-full px-6 lg:text-center font-geistMono">
               V{mks.version}
             </p>
 
-            <p className="mt-[7vh] md:mt-[10vh] 2xl:mt-[1.8rem] mb-[6vh] lg:mb-[3.6rem] 2xl:mb-[4.3rem] text-slate-400 w-full px-6 font-geistMono flex flex-row lg:justify-center items-center">
+            <p className="mt-[5vh] md:mt-[10vh] 2xl:mt-[1.8rem] mb-[6vh] lg:mb-[3.6rem] 2xl:mb-[4.3rem] text-slate-400 w-full px-6 font-geistMono flex flex-row lg:justify-center items-center">
               Scroll kebawah untuk lihat selengkapnya{" "}
               <i className="bx bx-down-arrow-alt text-xl"></i>
             </p>
           </div>
         </div>
 
-        <CenterHr text="Bawah" className="px-8" />
+        <CenterHr text="Bawah" className="px-[5vw]" />
+
+        <section></section>
 
         <section className="px-7 mt-12 py-3 pt-10 mb-8 min-h-screen">
           <div className="flex flex-wrap gap-1">

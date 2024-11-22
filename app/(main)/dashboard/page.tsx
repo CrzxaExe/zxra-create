@@ -19,7 +19,7 @@ const Page = async () => {
   const session = await auth();
   const user = await FindEmail(session?.user?.email || "");
 
-  if (user?.error) redirect("/no-auth");
+  if (user?.error && session) redirect("/no-auth");
 
   const project = (await axios.get(
     "https://zxra-rest.vercel.app/project-list"
