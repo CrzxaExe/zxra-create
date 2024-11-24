@@ -2,7 +2,6 @@
 
 import React from "react";
 import { LoginButton } from "../button";
-import Link from "next/link";
 import { CenterHr } from "../hr";
 
 import { loginCredentials } from "@/lib/action";
@@ -12,7 +11,7 @@ const LoginForm = () => {
   const [state, formAction] = useFormState(loginCredentials, null);
 
   return (
-    <div className="mt-2">
+    <div className="">
       <form action={formAction} className="w-full">
         {state?.message ? (
           <div
@@ -23,14 +22,14 @@ const LoginForm = () => {
           </div>
         ) : null}
 
-        <label htmlFor="email" className="block text-base lg:text-lg mt-5">
+        <label htmlFor="email" className="block text-base lg:text-lg">
           Email
         </label>
         <input
           type="email"
           name="email"
           placeholder="Email anda tuan"
-          className="w-full block bg-slate-400/40 isolate text-slate-200 outline-none px-3 py-2 rounded-lg placeholder:text-slate-300"
+          className="w-full block bg-base-ascent/50 backdrop-blur-lg isolate text-slate-200 outline-none px-3 py-1.5 rounded-lg placeholder:text-slate-300"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -45,7 +44,7 @@ const LoginForm = () => {
           type="password"
           name="password"
           placeholder="Sandimu tuan"
-          className="w-full block bg-slate-400/40 isolate text-slate-200 outline-none px-3 py-2 rounded-lg placeholder:text-slate-300"
+          className="w-full block bg-base-ascent/50 backdrop-blur-lg isolate text-slate-200 outline-none px-3 py-1.5 rounded-lg placeholder:text-slate-300"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -54,13 +53,6 @@ const LoginForm = () => {
         </div>
         <LoginButton />
       </form>
-
-      <span className="text-slate-400 mt-2 block">
-        Belum punya akun?{" "}
-        <Link href="/register" className="text-teal-400">
-          Daftar
-        </Link>
-      </span>
 
       <CenterHr text="Atau" />
     </div>

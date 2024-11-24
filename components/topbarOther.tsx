@@ -13,7 +13,7 @@ const TopbarOther = ({
 }) => {
   return (
     <div className="flex items-center">
-      <ul className="flex flex-row gap-6 items-center">
+      <ul className="flex flex-row gap-3 items-center">
         <li className="block md:hidden">
           <Link href="/search" className="flex justify-center items-center">
             <SearchRounded />

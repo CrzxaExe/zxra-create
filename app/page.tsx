@@ -3,13 +3,13 @@ import Link from "next/link";
 
 import logo from "@/app/asset/zx.png";
 import bgEffect from "@/app/asset/bg_effect.png";
-import SS from "@/app/asset/ss.png";
 
 import {
-  BoltOutlined,
-  GradeOutlined,
-  AspectRatioOutlined,
-  UpgradeOutlined,
+  AspectRatioRounded,
+  UpdateRounded,
+  LinkRounded,
+  BoltRounded,
+  CleaningServicesRounded,
 } from "@mui/icons-material";
 
 import { CenterHr } from "@/components/hr";
@@ -46,8 +46,8 @@ export default function Home() {
               Creating All Task Eazier Is Your Job
             </h2>
             <p className="text-lg max-w-screen-lg md:text-xl lg:text-2xl 2xl:px-[9.5rem] w-full text-justify lg:text-center lg:px-[4.3rem] whitespace-normal mb-5 mt-[2vh] xl:mt-12 lg:mt-2 font-geistMono text-slate-400 mx-auto">
-              Super Apps yang menghubungkan berbagai macam aplikasi kami dan
-              memusatkan semuanya pada 1 aplikasi ini.
+              Mudahkan apapun dengan karya kami yang akan tersebar dimanapun dan
+              kapanpun.
             </p>
             <div className="w-full flex flex-row lg:justify-center gap-4 mt-[4vh] lg:mt-[1.2rem] 2xl:mt-[2.4rem]">
               <Link
@@ -74,124 +74,132 @@ export default function Home() {
           </div>
         </div>
 
-        <CenterHr text="Bawah" className="px-[5vw]" />
+        <CenterHr text="Bawah" className="px-[5vw] -mt-7" />
 
-        <section></section>
-
-        <section className="px-7 mt-12 py-3 pt-10 mb-8 min-h-screen">
-          <div className="flex flex-wrap gap-1">
-            <div className="w-full md:w-[49%] md:pr-1">
-              <span className="text-slate-500 text-base lg:text-xl block mt-2">
-                Apa itu
-              </span>
-              <span className="text-3xl lg:text-5xl text-teal-500 font-bold font-paprika mb-2">
+        <section className="min-h-screen mt-9">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-5">
+            <div className="px-5 py-2">
+              <h6 className="text-base lg:text-lg text-slate-500">Apa itu</h6>
+              <h1 className="-mt-1 text-6xl lg:text-5xl font-geistSans font-medium text-base-upascent">
                 Create Zx
-              </span>
-              <p className="text-slate-400 text-base lg:text-2xl text-justify">
-                Sebuah aplikasi website dan merupakan pengganti website Zxra
-                Create yang dulu namun sekarang dibuat ulang menggunakan
-                framework
-                <a
-                  href="https://nextjs.org/"
-                  className="text-sky-300 px-2.5"
-                  target="blank"
-                >
-                  Next.js
-                </a>
-                yang cukup powerfull dan memiliki ekosistem yang bagus. Sekarang
-                Website ini akan lebih banyak konten dan hal baru yang mungkin
-                akan kalian kenali saat menggunakannya.
-                <br />
-                <br />
-                Sekarang anda harus login untuk mengakses semua fitur yang ada,
-                tenang fitur disini masih tidak ada biaya apapun jadi kalian
-                masih bisa mengakses semua fitur yang ada dan kami akan selalu
-                meningkatkan kinerja aplikasi ini.
-                <br />
-                <br />
-                Eazier your life with Zxra Create
+              </h1>
+
+              <p className="text-base lg:text-2xl mt-6 text-left text-slate-300">
+                Sebuah aplikasi website yang merupakan media informasi tentang{" "}
+                <Link href="/about" className="text-cyan-300">
+                  Zxra
+                </Link>{" "}
+                serta menyediakan alat yang akan berguna bagi semua orang.
               </p>
+
+              <p className="text-base lg:text-2xl mt-6 text-left text-slate-300">
+                Aplikasi ini lebih lengkap dan canggih dari pada website
+                terdahulu, namun keduanya tetap open source dan bisa di cek di
+                github leader kami
+              </p>
+
+              <p className="text-base lg:text-xl mt-6 text-left text-slate-300">
+                Aplikasi ini menggunakan Typescript dan juga kami mengubah
+                frameworknya juga
+              </p>
+
+              <span className="text-cyan-400 font-bold mt-6 text-xl block">
+                Zxra React Repo
+              </span>
+              <div className=" bg-base-ascent px-3 py-2 text-slate-200 rounded-lg shadow-lg flex flex-row items-center">
+                <input
+                  type="text"
+                  readOnly
+                  value="https://github.com/CrzxaExe/zxra-reactjs"
+                  className="outline-none bg-transparent w-full"
+                />
+                <a
+                  href="https://github.com/CrzxaExe/zxra-reactjs"
+                  className="px-1 py-1 hover:text-base-upascent"
+                >
+                  <LinkRounded />
+                </a>
+              </div>
             </div>
-            <div className="w-full md:w-[49%] xl:p-[3.7rem] xl:pt-0">
-              <Image
-                src={SS}
-                alt="Screenshoot"
-                width={400}
-                height={400}
-                className="object-contain w-full mt-5 md:mt-0 md:pl-2"
-              />
-            </div>
+            <div className="px-5 py-4">
+              <div className="bg-base-ascent/40 rounded-xl backdrop-blur-xl shadow-2xl shadow-base-ascent/40 w-full min-h-fit lg:min-h-full px-5 py-3 resize-none outline-none overflow-y-hidden overflow-x-clip">
+                <span className="text-cyan-400 text-lg lg:text-xl font-paprika font-bold">
+                  Zxra React
+                </span>
 
-            <span className="text-3xl lg:text-5xl text-teal-500 font-bold font-paprika mt-6">
-              Apa Yang Beda?
-            </span>
+                <span className="text-base text-slate-300 block mt-2">
+                  Project terdahulu
+                </span>
 
-            <div className="w-full mt-2 lg:mt-5">
-              <div className="flex flex-wrap w-full gap-5">
-                <div className="w-[47.2%] md:w-[31.4%] lg:w-[23.5%] rounded-xl py-2 relative">
-                  <div className="flex flex-row items-center text-slate-400 gap-2">
-                    <BoltOutlined className="text-2xl lg:text-3xl aspect-square" />
-                    <b className="text-xl lg:text-2xl font-geistSans">
-                      Cepat & Kuat
-                    </b>
-                  </div>
-                  <p className="text-slate-400 mt-1 px-2 text-sm lg:text-base 2xl:text-lg">
-                    Kinerja website lebih cepat untuk memproses dan lebih
-                    powerfull.
-                  </p>
-                </div>
-
-                <div className="w-[47.2%] md:w-[31.4%] lg:w-[23.5%] rounded-xl py-2 relative">
-                  <div className="flex flex-row items-center text-slate-400 gap-2">
-                    <GradeOutlined className="text-2xl lg:text-3xl aspect-square" />
-                    <b className="text-xl lg:text-2xl font-geistSans">
-                      Bersih & Simpel
-                    </b>
-                  </div>
-                  <p className="text-slate-400 mt-1 px-2 text-sm lg:text-base 2xl:text-lg">
-                    Tampilan lebih bersih dipadukan dengan desain minimalist.
-                  </p>
-                </div>
-
-                <div className="w-[47.2%] md:w-[31.4%] lg:w-[23.5%] rounded-xl py-2 relative">
-                  <div className="flex flex-row items-center text-slate-400 gap-2">
-                    <AspectRatioOutlined className="text-2xl lg:text-3xl aspect-square" />
-                    <b className="text-xl lg:text-2xl font-geistSans">
-                      Responsif
-                    </b>
-                  </div>
-                  <p className="text-slate-400 mt-1 px-2 text-sm lg:text-base 2xl:text-lg">
-                    Tampilan akan menyesuaikan dengan ukuran layar anda.
-                  </p>
-                </div>
-
-                <div className="w-[47.2%] md:w-[31.4%] lg:w-[23.5%] rounded-xl py-2 relative">
-                  <div className="flex flex-row items-end text-slate-400 gap-2">
-                    <UpgradeOutlined className="text-2xl lg:text-3xl aspect-square" />
-                    <b className="text-xl lg:text-2xl font-geistSans">Modern</b>
-                  </div>
-                  <p className="text-slate-400 mt-1 px-2 text-sm lg:text-base 2xl:text-lg">
-                    Menggunakan teknologi yang lebih baru
-                  </p>
+                <div className="flex flex-row mt-5 pb-4 px-2 shad">
+                  <Image
+                    alt="ss2"
+                    src="https://raw.githubusercontent.com/CrzxaExe/CrzxaExe/refs/heads/main/asset/Screenshot%202024-11-22%20202044.png"
+                    width={280}
+                    height={280}
+                    className="z-[0] -skew-y-2 shadow-xl"
+                  />
+                  <Image
+                    alt="ss1"
+                    src="https://raw.githubusercontent.com/CrzxaExe/CrzxaExe/refs/heads/main/asset/Screenshot%202024-11-22%20201950.png"
+                    width={300}
+                    height={300}
+                    className="z-[1] -ml-[49%] mt-[2%] -skew-y-6 shadow-xl"
+                  />
                 </div>
               </div>
             </div>
           </div>
-          <CenterHr text="Scroll Kebawah" className="mt-[4rem]" />
-        </section>
 
-        <section className="min-h-screen bg-slate-900/70 text-slate-200 backdrop-blur-md isolate py-12 rounded-t-lg">
-          <h1 className="font-paprika w-full text-center lg:text-left font-bold text-2xl lg:text-3xl px-7 py-3">
-            Overview
+          <h1 className="text-xl lg:text-3xl text-base-upascent font-bold px-5 mt-4">
+            Peningkatan
           </h1>
 
-          <p className="mt-5 text-base lg:text-lg font-paprika px-7 text-justify">
-            Aplikasi ini memiliki banyak fitur baru dibanding dengan yang lama
-            salah satunya yaitu autentikasinya. User harus login untuk dapat
-            mengakses aplikasi didalamnya. Dalam Aplikasi ini memiliki banyak
-            library selain yang kami sebutkan disini. Aplikasi ini merupakan
-            aplikasi open source dan bisa kalian temukan di github owner kami.
-          </p>
+          <div className="mt-2 px-5 py-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            <div className="bg-base-upfloor/50 rounded-lg shadow-lg px-3 py-2">
+              <span className="text-xl font-bold text-slate-400 flex items-center gap-1">
+                <BoltRounded />
+                Cepat & Kuat
+              </span>
+
+              <p className="text-sm text-slate-300 px-1 py-1 mt-2">
+                Kinerja lebih cepat dan kuat daripada yang dulu
+              </p>
+            </div>
+
+            <div className="bg-base-upfloor/50 rounded-lg shadow-lg px-3 py-2">
+              <span className="text-xl font-bold text-slate-400 flex items-center gap-1">
+                <CleaningServicesRounded />
+                Bersih & Simpel
+              </span>
+
+              <p className="text-sm text-slate-300 px-2 py-1 mt-2">
+                Tampilan lebih bersih dipadukan dengan desain minimalis
+              </p>
+            </div>
+
+            <div className="bg-base-upfloor/50 rounded-lg shadow-lg px-3 py-2">
+              <span className="text-xl font-bold text-slate-400 flex items-center gap-1">
+                <AspectRatioRounded />
+                Responsif
+              </span>
+
+              <p className="text-sm text-slate-300 px-2 py-1 mt-2">
+                Responsifitas lebih tinggi dan lebih tertata
+              </p>
+            </div>
+
+            <div className="bg-base-upfloor/50 rounded-lg shadow-lg px-3 py-2">
+              <span className="text-xl font-bold text-slate-400 flex items-center gap-1">
+                <UpdateRounded />
+                Modern
+              </span>
+
+              <p className="text-sm text-slate-300 px-2 py-1 mt-2">
+                Website lebih modern dengan banyak fitur baru dan library
+              </p>
+            </div>
+          </div>
         </section>
       </section>
       <Footer />

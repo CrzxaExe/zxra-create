@@ -1,11 +1,6 @@
 import LoginForm from "@/components/auth/loginForm";
 import React from "react";
 
-import { GithubLoginButton } from "@/components/auth/authButton";
-
-// import GoogleIcon from "@mui/icons-material/Google";
-import GitHubIcon from "@mui/icons-material/GitHub";
-
 import { metadata } from "@/app/layout";
 
 const Page = () => {
@@ -17,18 +12,6 @@ const Page = () => {
         Masuk
       </h1>
       <LoginForm />
-
-      <div className="w-full">
-        {/* <OtherLoginButton className="flex flex-row items-center justify-center gap-2">
-          <GoogleIcon />
-          Google
-        </OtherLoginButton> */}
-
-        <GithubLoginButton className="flex flex-row items-center justify-center gap-2">
-          <GitHubIcon />
-          Github
-        </GithubLoginButton>
-      </div>
     </div>
   );
 };

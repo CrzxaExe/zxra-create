@@ -27,7 +27,7 @@ const Card = ({
     <>
       <Link
         href={data.href ? data.href : ""}
-        className="w-full aspect-square bg-slate-700 block h-max rounded-lg relative"
+        className="w-full aspect-square bg-slate-700 block h-max rounded-lg relative hover:scale-110 transition-all duration-150 ease-in-out origin-center"
       >
         {data.version && (
           <span className="absolute bottom-1 left-1 px-1 text-xs font-valorant">

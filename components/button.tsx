@@ -36,7 +36,7 @@ export const RegisterButton = () => {
     <button
       type="submit"
       disabled={pending}
-      className="w-full transition-all duration-300 ease-in-out bg-teal-400 hover:bg-sky-500 active:bg-slate-900 px-5 text-center py-3 mt-5 rounded-lg text-slate-600 hover:text-slate-800 active:text-white font-bold"
+      className="w-full transition-all duration-300 ease-in-out bg-base-upascent/80 hover:bg-base-upascent active:bg-base-ascent px-5 text-center py-2 mt-5 rounded-lg text-slate-600 hover:text-slate-800 active:text-white font-bold"
     >
       {pending ? "Registrasi.." : "Daftar"}
     </button>
@@ -50,7 +50,7 @@ export const LoginButton = () => {
     <button
       type="submit"
       disabled={pending}
-      className="w-full transition-all duration-300 ease-in-out bg-teal-400 hover:bg-sky-500 active:bg-slate-900 px-5 text-center py-3 mt-5 rounded-lg text-slate-600 hover:text-slate-800 active:text-white font-bold"
+      className="w-full transition-all duration-300 ease-in-out bg-base-upascent/80 hover:bg-base-upascent active:bg-base-ascent px-5 text-center py-2 mt-5 rounded-lg text-slate-600 hover:text-slate-800 active:text-white font-bold"
     >
       {pending ? "Masuk..." : "Masuk"}
     </button>

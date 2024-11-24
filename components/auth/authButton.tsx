@@ -36,7 +36,7 @@ export const GithubLoginButton = ({
     >
       <button
         type="submit"
-        className={`${className} w-full bg-black px-5 text-center py-3 mt-2 rounded-lg text-white`}
+        className={`${className} w-full bg-black px-5 text-center py-2 mt-2 rounded-lg text-white`}
       >
         {children}
       </button>
