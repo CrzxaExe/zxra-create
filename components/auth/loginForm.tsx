@@ -29,7 +29,7 @@ const LoginForm = () => {
           type="email"
           name="email"
           placeholder="Email anda tuan"
-          className="w-full block bg-base-ascent/50 backdrop-blur-lg isolate text-slate-200 outline-none px-3 py-1.5 rounded-lg placeholder:text-slate-300"
+          className="w-full text-sm block bg-base-ascent/50 backdrop-blur-lg isolate text-slate-200 outline-none px-3 py-1.5 rounded-lg placeholder:text-slate-300"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -44,7 +44,7 @@ const LoginForm = () => {
           type="password"
           name="password"
           placeholder="Sandimu tuan"
-          className="w-full block bg-base-ascent/50 backdrop-blur-lg isolate text-slate-200 outline-none px-3 py-1.5 rounded-lg placeholder:text-slate-300"
+          className="w-full text-sm block bg-base-ascent/50 backdrop-blur-lg isolate text-slate-200 outline-none px-3 py-1.5 rounded-lg placeholder:text-slate-300"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">

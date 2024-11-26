@@ -51,16 +51,16 @@ export default function Home() {
             </p>
             <div className="w-full flex flex-row lg:justify-center gap-4 mt-[4vh] lg:mt-[1.2rem] 2xl:mt-[2.4rem]">
               <Link
-                href="/login"
+                href="/sign"
                 className="flex justify-center items-center w-fit px-5 lg:px-8 py-2.5 lg:py-3 text-xl border border-base-upascent text-base-upascent rounded-3xl hover:bg-base-upascent hover:text-base-upfloor font-bold transition-all duration-300 ease-in-out shadow-md"
               >
                 Masuk
               </Link>
               <Link
-                href="/register"
+                href="/dashboard"
                 className="flex justify-center items-center w-fit px-5 lg:px-8 py-2.5 lg:py-3 text-xl bg-base-upascent border border-base-upascent text-base-upfloor hover:text-base-upascent rounded-3xl hover:bg-transparent font-bold transition-all duration-300 ease-in-out shadow-md"
               >
-                Daftar
+                Beranda
               </Link>
             </div>
             <p className="mt-[5vh] md:mt-[6vh] 2xl:mt-[2rem] text-slate-600 w-full px-6 lg:text-center font-geistMono">

@@ -11,7 +11,7 @@ const Page = ({ isLogin = false }: { isLogin?: boolean }) => {
   return (
     <div className="w-full bg-base-upfloor/60 backdrop-blur-lg rounded-xl max-w-screen-sm shadow-xl">
       <div className="grid grid-cols-2 gap-5 relative px-4 py-5">
-        <SliderSign islogin={isLogin} />
+        <SliderSign isLogin={isLogin} />
         <div>
           <LoginForm />
           <div className="w-full">
