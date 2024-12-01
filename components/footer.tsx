@@ -3,6 +3,11 @@ import { CenterHr } from "./hr";
 
 const sosmed = [
   {
+    name: "Discord",
+    link: "https://discord.gg/KZhGaEbR6P",
+    icon: "bx bxl-discord",
+  },
+  {
     name: "Github",
     link: "https://github.com/Zxra-Create",
     icon: "bx bxl-github",
@@ -34,7 +39,7 @@ const Footer = ({ className }: { className?: string }) => {
 
         <div className="">
           <h1 className="font-semibold text-2xl text-slate-400">Kontak</h1>
-          <ul className="inline-flex flex-row mt-[2.1vh] gap-[0.4rem]">
+          <ul className="inline-flex flex-row mt-[1.5vh] gap-[0.4rem]">
             {sosmed
               .sort((a, b) => a.name.localeCompare(b.name))
               .map((a, i) => {
@@ -57,7 +62,7 @@ const Footer = ({ className }: { className?: string }) => {
         </div>
 
         <div>
-          <h1 className="font-semibold text-2xl text-slate-400">Page</h1>
+          <h1 className="font-semibold text-2xl text-slate-400"></h1>
         </div>
       </div>
       <CenterHr

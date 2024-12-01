@@ -22,7 +22,7 @@ const TopbarOther = ({
         <li>
           {!full && (
             <TopbarButton
-              href="/login"
+              href="/sign"
               text="Masuk"
               className="bg-base-upascent hover:bg-base-ascent border-[1px] border-base-upascent text-base-floor hover:text-base-upascent rounded-lg py-1 px-1 lg:px-3 font-semibold"
             >
