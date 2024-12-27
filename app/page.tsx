@@ -42,7 +42,7 @@ export default function Home() {
             </div>
           </div>
           <div className="px-7 lg:mt-[1vh] 2xl:mt-[1rem]">
-            <h2 className="bg-gradient-to-r from-base-upascent to-base-ascent text-transparent bg-clip-text lg:text-center w-full text-5xl md:text-4xl lg:text-6xl mt-[3rem] lg:mt-[4rem] font-paprika font-semibold flex items-end lg:justify-center py-2">
+            <h2 className="bg-gradient-to-r from-base-upascent to-base-ascent text-transparent bg-clip-text lg:text-center w-full text-4xl md:text-3xl lg:text-5xl mt-[3rem] lg:mt-[4rem] font-paprika font-semibold flex items-end lg:justify-center py-2">
               Creating All Task Eazier Is Your Job
             </h2>
             <p className="text-lg max-w-screen-lg md:text-xl lg:text-2xl 2xl:px-[9.5rem] w-full text-justify lg:text-center lg:px-[4.3rem] whitespace-normal mb-5 mt-[2vh] xl:mt-12 lg:mt-2 font-geistMono text-slate-400 mx-auto">
@@ -131,21 +131,23 @@ export default function Home() {
                   Project terdahulu
                 </span>
 
-                <div className="flex flex-row mt-5 pb-4 px-2 shad">
-                  <Image
-                    alt="ss2"
-                    src="https://raw.githubusercontent.com/CrzxaExe/CrzxaExe/refs/heads/main/asset/Screenshot%202024-11-22%20202044.png"
-                    width={280}
-                    height={280}
-                    className="z-[0] -skew-y-2 shadow-xl"
-                  />
-                  <Image
-                    alt="ss1"
-                    src="https://raw.githubusercontent.com/CrzxaExe/CrzxaExe/refs/heads/main/asset/Screenshot%202024-11-22%20201950.png"
-                    width={300}
-                    height={300}
-                    className="z-[1] -ml-[49%] mt-[2%] -skew-y-6 shadow-xl"
-                  />
+                <div className="flex justify-center items-center">
+                  <div className="flex flex-row mt-5 pb-4 px-2 shad">
+                    <Image
+                      alt="ss2"
+                      src="https://raw.githubusercontent.com/CrzxaExe/CrzxaExe/refs/heads/main/asset/Screenshot%202024-11-22%20202044.png"
+                      width={280}
+                      height={280}
+                      className="z-[0] -skew-y-2 shadow-xl"
+                    />
+                    <Image
+                      alt="ss1"
+                      src="https://raw.githubusercontent.com/CrzxaExe/CrzxaExe/refs/heads/main/asset/Screenshot%202024-11-22%20201950.png"
+                      width={300}
+                      height={300}
+                      className="z-[1] -ml-[12.4rem] mt-[2%] -skew-y-6 shadow-xl"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -155,7 +157,7 @@ export default function Home() {
             Peningkatan
           </h1>
 
-          <div className="mt-2 px-5 py-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          <div className="mt-2 px-5 py-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 pb-5">
             <div className="bg-base-upfloor/50 rounded-lg shadow-lg px-3 py-2">
               <span className="text-xl font-bold text-slate-400 flex items-center gap-1">
                 <BoltRounded />

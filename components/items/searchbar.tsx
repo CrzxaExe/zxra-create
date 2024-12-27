@@ -7,10 +7,11 @@ const Searchbar = () => {
       <button className="text-[24px] aspect-square pb-[8px]">
         <SearchOutlined />
       </button>
-      <textarea
+      <input
         placeholder="Cari apa?"
-        className="px-1 pr-3 outline-none max-w-screen-md h-[31px] bg-transparent py-[2px] overflow-y-hidden overflow-x-clip resize-none"
-      ></textarea>
+        type="search"
+        className="px-1 pr-3 outline-none max-w-screen-md h-[29px] bg-transparent py-[1.5px] overflow-y-hidden overflow-x-clip resize-none"
+      ></input>
     </div>
   );
 };

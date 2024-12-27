@@ -15,7 +15,7 @@ export const TopbarButton = ({
   return (
     <Link
       href={href}
-      className={`${className} -mt-1 flex flex-row items-center justify-center text-base font-paprika transition duration-300 ease-in-out`}
+      className={`${className} -mt-1 flex flex-row items-center justify-center text-base transition duration-300 ease-in-out`}
     >
       <div className="md:hidden">{children}</div>
       <span

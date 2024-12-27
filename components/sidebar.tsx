@@ -28,28 +28,28 @@ export const Sidebar = ({
             <li className="w-full rounded-r-lg text-base-upascent text-base hover:bg-base-upascent transition-all duration-300 ease-in-out hover:pl-4 hover:text-base-upfloor">
               <Link
                 href="/"
-                className="flex flex-row gap-4 items-center py-4 px-5"
+                className="flex flex-row gap-4 items-center py-3 px-4"
               >
                 <HomeRounded />
-                <span className="font-paprika font-bold">Home</span>
+                <span className="font-bold">Home</span>
               </Link>
             </li>
             <li className="w-full rounded-r-lg text-base-upascent text-base hover:bg-base-upascent transition-all duration-300 ease-in-out hover:pl-4 hover:text-base-upfloor">
               <Link
                 href="/dashboard"
-                className="flex flex-row gap-4 items-center py-4 px-5"
+                className="flex flex-row gap-4 items-center py-3 px-4"
               >
                 <Newspaper />
-                <span className="font-paprika font-bold">Dashboard</span>
+                <span className="font-bold">Dashboard</span>
               </Link>
             </li>
             <li className="w-full rounded-r-lg text-base-upascent text-base hover:bg-base-upascent transition-all duration-300 ease-in-out hover:pl-4 hover:text-base-upfloor">
               <Link
                 href="/about"
-                className="flex flex-row gap-4 items-center py-4 px-5"
+                className="flex flex-row gap-4 items-center py-3 px-4"
               >
                 <PeopleOutline />
-                <span className="font-paprika font-bold">About</span>
+                <span className="font-bold">About</span>
               </Link>
             </li>
             <li></li>
@@ -64,7 +64,7 @@ export const Sidebar = ({
 export const SidebarButton = ({ func }: { func: any }) => {
   return (
     <button onClick={() => func(true)}>
-      <ExploreRounded className="text-3xl hover:rotate-45 transition-all duration-150 ease-in-out" />
+      <ExploreRounded className="text-3xl hover:rotate-45 transition-all duration-300 ease-in-out" />
       {/* <Image alt="logo-full" src={LogoFull} width={40} height={9} /> */}
     </button>
   );

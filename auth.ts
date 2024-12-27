@@ -11,7 +11,7 @@ import GitHub from "next-auth/providers/github";
 export const { handlers, signIn, signOut, auth } = NextAuth({
   session: { strategy: "jwt" },
   pages: {
-    signIn: "/login",
+    signIn: "/sign",
   },
   providers: [
     GitHub,
@@ -53,10 +53,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       const ProtectedRoutes = ["/user"];
 
       if (!isLogin && ProtectedRoutes.includes(nextUrl.pathname)) {
-        return Response.redirect(new URL("/login", nextUrl));
+        return Response.redirect(new URL("/sign", nextUrl));
       }
 
-      if (isLogin && ["/login", "/register"].includes(nextUrl.pathname)) {
+      if (isLogin && ["/sign"].includes(nextUrl.pathname)) {
         return Response.redirect(new URL("/dashboard", nextUrl));
       }
       return true;

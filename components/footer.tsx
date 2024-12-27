@@ -1,5 +1,7 @@
 import React from "react";
 import { CenterHr } from "./hr";
+import logo from "@/app/asset/Zxra.png";
+import Image from "next/image";
 
 const sosmed = [
   {
@@ -32,9 +34,18 @@ const Footer = ({ className }: { className?: string }) => {
       <div className="px-[6vw] md:px-[3.8vw] lg:px-[2.5vw] xl:px-[3.3vw] 2xl:px-[17.5%] mb-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
         <div className="">
           <h1 className="font-semibold text-2xl text-slate-400">Zxra</h1>
-          <span className="text-slate-500 text-base">
-            Eazier Your Live With Us
-          </span>
+          <div className="flex flex-row gap-4 flex-warp items-center">
+            <Image
+              src={logo}
+              alt="Logo"
+              width={300}
+              height={300}
+              className="aspect-square w-[120px] grayscale-[0.8] -my-[2rem] -mx-[1.8rem]"
+            />
+            <span className="text-slate-500 text-base">
+              Eazier Your Live With Us
+            </span>
+          </div>
         </div>
 
         <div className="">
