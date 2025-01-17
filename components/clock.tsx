@@ -1,21 +1,30 @@
 "use client";
 
 import dayjs from "dayjs";
-import isToday from "dayjs/plugin/isToday";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Clock = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [now, setTime] = useState(new Date());
+  const day = dayjs(now);
 
-  dayjs.extend(isToday);
+  function updateTime() {
+    setTime(new Date());
+  }
 
-  const day = dayjs();
+  useEffect(() => {
+    setInterval(() => {
+      updateTime();
+    }, 1000);
+  }, []);
+
   return (
-    <div className="mx-6 flex flex-row items-center bg-slate-700/60 rounded-xl px-4 py-4 -mt-3 shadow-md">
-      <div className="flex flex-row items-center gap-3">
-        <i className="bx bx-time text-xl"></i>
-        <span className="font-mono text-sm">{day.format("DD MMMM YY")}</span>
+    <div className="flex flex-row items-center bg-[#292929] rounded-xl p-3 shadow-md aspect-square max-w-[120px]">
+      <div className="flex items-center justify-center w-full text-center border-[3px] border-solid border-base-ascent aspect-square rounded-xl">
+        <span className="font-mono text-base text-base-ascent">
+          {day.format("hh:mm")}
+        </span>
       </div>
     </div>
   );

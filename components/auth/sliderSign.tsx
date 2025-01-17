@@ -19,7 +19,7 @@ const SliderSign = ({ isLogin }: { isLogin?: boolean }) => {
         )}
       </div>
 
-      <h1 className="text-xl lg:text-2xl font-semibold font-paprika text-base-upascent mt-4">
+      <h1 className="text-xl lg:text-2xl font-semibold font-mono text-base-upascent mt-4">
         {sign ? "Daftar" : "Masuk"}
       </h1>
 
@@ -29,7 +29,7 @@ const SliderSign = ({ isLogin }: { isLogin?: boolean }) => {
           : "Masuk kembali ke akun anda yang sudah terdaftar untuk melanjutkan"}
       </span>
 
-      <span className="text-base font-paprika text-slate-300 absolute bottom-4">
+      <span className="text-base font-mono text-slate-300 absolute bottom-4">
         {sign ? "Sudah punya akun? " : "Belum punya akun? "}
         <button onClick={() => setSign(!sign)} className="text-base-upascent">
           {sign ? "Masuk" : "Daftar"}

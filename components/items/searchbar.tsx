@@ -1,10 +1,22 @@
 import React from "react";
 import { SearchOutlined } from "@mui/icons-material";
 
-const Searchbar = () => {
+const Searchbar = ({
+  color = "bg-slate-500/35",
+  hover = "bg-stone-500/50",
+  focus = "bg-stone-500/70",
+}: {
+  color?: string;
+  hover?: string;
+  focus?: string;
+}) => {
   return (
-    <div className="hidden md:flex items-center max-w-screen-md lg:min-w-screen-lg lg:max-w-screen-lg h-[32px] bg-slate-500/35 backdrop-blur-lg rounded-lg px-2 hover:bg-slate-500/50 focus:bg-stone-500/70 transition-all duration-300 ease-in-out">
-      <button className="text-[24px] aspect-square pb-[8px]">
+    <div
+      className={`hidden md:flex items-center max-w-screen-md lg:min-w-screen-lg lg:max-w-screen-lg h-[32px] ${color} backdrop-blur-lg rounded-lg px-2 ${
+        "hover:" + hover
+      } ${"focus:" + focus} transition-all duration-300 ease-in-out`}
+    >
+      <button className="text-[1.5rem] lg:text-[0.7rem] aspect-square pb-[8px]">
         <SearchOutlined />
       </button>
       <input

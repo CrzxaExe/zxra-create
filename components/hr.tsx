@@ -13,3 +13,20 @@ export const CenterHr = ({
     </div>
   );
 };
+
+export const RightHr = ({
+  text,
+  className,
+}: {
+  text?: string;
+  className?: string;
+}) => {
+  return (
+    <div
+      className={`${className} flex-row gap-2 items-center px-2 hidden lg:flex`}
+    >
+      <span className="w-full h-[1px] bg-slate-400"></span>
+      <span className="text-slate-400 whitespace-pre">{text}</span>
+    </div>
+  );
+};

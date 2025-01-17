@@ -2,12 +2,7 @@ import { Drawer, Box } from "@mui/material";
 import React from "react";
 
 // import LogoFull from "@/app/asset/Zxra-full.png";
-import {
-  Newspaper,
-  HomeRounded,
-  PeopleOutline,
-  ExploreRounded,
-} from "@mui/icons-material";
+import { Newspaper, HomeRounded, ExploreRounded } from "@mui/icons-material";
 import Link from "next/link";
 
 export const Sidebar = ({
@@ -40,19 +35,9 @@ export const Sidebar = ({
                 className="flex flex-row gap-4 items-center py-3 px-4"
               >
                 <Newspaper />
-                <span className="font-bold">Dashboard</span>
+                <span className="font-bold">Main</span>
               </Link>
             </li>
-            <li className="w-full rounded-r-lg text-base-upascent text-base hover:bg-base-upascent transition-all duration-300 ease-in-out hover:pl-4 hover:text-base-upfloor">
-              <Link
-                href="/about"
-                className="flex flex-row gap-4 items-center py-3 px-4"
-              >
-                <PeopleOutline />
-                <span className="font-bold">About</span>
-              </Link>
-            </li>
-            <li></li>
           </ul>
         </div>
       </Box>

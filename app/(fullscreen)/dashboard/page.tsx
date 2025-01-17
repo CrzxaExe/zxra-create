@@ -16,11 +16,9 @@ const Page = async () => {
   if (user?.error && session) redirect("/no-auth");
 
   return (
-    <main className="mt-[7rem] relative max-w-screen-xl mx-auto">
-      <h1 className="text-3xl font-valorant">Dashboard</h1>
-
-      <div className="flex flex-row gap-4 mt-4"></div>
-    </main>
+    <div>
+      <div className="text-sm"></div>
+    </div>
   );
 };
 
