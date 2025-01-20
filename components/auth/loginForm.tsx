@@ -6,12 +6,13 @@ import { CenterHr } from "../hr";
 
 import { loginCredentials } from "@/lib/action";
 import { useFormState } from "react-dom";
+import { TextField } from "../components";
 
 const LoginForm = () => {
   const [state, formAction] = useFormState(loginCredentials, null);
 
   return (
-    <div className="">
+    <div>
       <form action={formAction} className="w-full">
         {state?.message ? (
           <div
@@ -22,14 +23,11 @@ const LoginForm = () => {
           </div>
         ) : null}
 
-        <label htmlFor="email" className="block text-base lg:text-lg">
-          Email
-        </label>
-        <input
-          type="email"
+        <TextField
           name="email"
-          placeholder="Email anda tuan"
-          className="w-full text-sm block bg-base-ascent/50 backdrop-blur-lg isolate text-slate-200 outline-none px-3 py-1.5 rounded-lg placeholder:text-slate-300"
+          placeholder="Isi email anda"
+          text="Email"
+          type="email"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -37,14 +35,11 @@ const LoginForm = () => {
           </span>
         </div>
 
-        <label htmlFor="password" className="block text-base lg:text-lg mt-2">
-          Sandi
-        </label>
-        <input
-          type="password"
+        <TextField
           name="password"
-          placeholder="Sandimu tuan"
-          className="w-full text-sm block bg-base-ascent/50 backdrop-blur-lg isolate text-slate-200 outline-none px-3 py-1.5 rounded-lg placeholder:text-slate-300"
+          placeholder="********"
+          text="Sandi"
+          type="password"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">

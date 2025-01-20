@@ -12,8 +12,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         src={bgEffect}
         className="w-full -mb-[14rem] md:-mb-[17rem] lg:-mb-[19rem] xl:-mb-[21rem] 2xl:-mb-[31rem] object-contain opacity-50"
       />
-      <div className="min-h-screen w-full flex items-center justify-center flex-col relative px-6">
-        <div className="px-3 py-5 w-full flex items-center justify-center flex-col lg:flex-row lg:-ml-[3rem] mb-[2.6rem] lg:-mb-[2.8rem] -mt-12 gap-2">
+      <div className="min-h-screen w-full flex items-center justify-center flex-col relative lg:px-6">
+        <div className="px-3 py-5 w-full flex items-center justify-center flex-col lg:flex-row lg:-ml-[3rem] mb-[2.9rem] lg:-mb-[2.8rem] -mt-12 gap-2">
           <Image
             alt="logo"
             src={logo}

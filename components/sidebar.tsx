@@ -1,7 +1,6 @@
 import { Drawer, Box } from "@mui/material";
 import React from "react";
 
-// import LogoFull from "@/app/asset/Zxra-full.png";
 import { Newspaper, HomeRounded, ExploreRounded } from "@mui/icons-material";
 import Link from "next/link";
 
@@ -50,7 +49,6 @@ export const SidebarButton = ({ func }: { func: any }) => {
   return (
     <button onClick={() => func(true)}>
       <ExploreRounded className="text-3xl hover:rotate-45 transition-all duration-300 ease-in-out" />
-      {/* <Image alt="logo-full" src={LogoFull} width={40} height={9} /> */}
     </button>
   );
 };

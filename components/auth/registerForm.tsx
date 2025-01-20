@@ -4,6 +4,7 @@ import { useFormState } from "react-dom";
 
 import { registerCredentials } from "@/lib/action";
 import { RegisterButton } from "../button";
+import { TextField } from "../components";
 
 const RegisterForm = () => {
   const [state, formAction] = useFormState(registerCredentials, null);
@@ -20,14 +21,11 @@ const RegisterForm = () => {
           </div>
         ) : null}
 
-        <label htmlFor="name" className="text-base lg:text-lg">
-          Nama
-        </label>
-        <input
-          type="text"
+        <TextField
           name="name"
-          placeholder="Hey siapa namamu tuan"
-          className="w-full text-sm block bg-base-ascent/50 backdrop-blur-lg isolate text-slate-200 outline-none px-3 py-1.5 rounded-lg placeholder:text-slate-300"
+          placeholder="Siapa namamu"
+          text="Name"
+          type="type"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -35,14 +33,11 @@ const RegisterForm = () => {
           </span>
         </div>
 
-        <label htmlFor="email" className="block text-base lg:text-lg mt-2">
-          Email
-        </label>
-        <input
-          type="email"
+        <TextField
           name="email"
-          placeholder="Emailmu tuan"
-          className="w-full text-sm block bg-base-ascent/50 backdrop-blur-lg  isolate text-slate-200 outline-none px-3 py-1.5 rounded-lg placeholder:text-slate-300"
+          placeholder="Isi email anda"
+          text="Email"
+          type="email"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -50,14 +45,11 @@ const RegisterForm = () => {
           </span>
         </div>
 
-        <label htmlFor="password" className="block text-base lg:text-lg mt-2">
-          Sandi
-        </label>
-        <input
-          type="password"
+        <TextField
           name="password"
-          placeholder="Sandimu"
-          className="w-full text-sm block bg-base-ascent/50 backdrop-blur-lg isolate text-slate-200 outline-none px-3 py-1.5 rounded-lg placeholder:text-slate-300"
+          placeholder="********"
+          text="Sandi"
+          type="password"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -65,17 +57,11 @@ const RegisterForm = () => {
           </span>
         </div>
 
-        <label
-          htmlFor="ComfirmPassword"
-          className="block text-base lg:text-lg mt-3"
-        >
-          Konfirmasi Sandi
-        </label>
-        <input
-          type="password"
+        <TextField
           name="ConfirmPassword"
-          placeholder="Isi lagi sandimu"
-          className="w-full text-sm block bg-base-ascent/50 backdrop-blur-lg isolate text-slate-200 outline-none px-3 py-1.5 rounded-lg placeholder:text-slate-300"
+          placeholder="*******"
+          text="Konfirmasi Sandi"
+          type="password"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">

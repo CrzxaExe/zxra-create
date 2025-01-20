@@ -73,7 +73,7 @@ export const loginCredentials = async (
     if (error instanceof AuthError) {
       switch (error.type) {
         case "CredentialsSignin":
-          return { message: "Login tidak valid" };
+          return { message: "Email atau Password salah" };
         default:
           return { message: "Ada masalah" };
       }

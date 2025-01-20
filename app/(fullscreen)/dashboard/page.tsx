@@ -1,23 +1,16 @@
 "use server";
 
-import { auth } from "@/auth";
-import { FindEmail } from "@/lib/db";
-import { redirect } from "next/navigation";
 import React from "react";
 
 import { metadata } from "@/app/layout";
+import { DashboardWidget } from "@/components/components";
 
 const Page = async () => {
   metadata.title = "Beranda";
 
-  const session = await auth();
-  const user = await FindEmail(session?.user?.email || "");
-
-  if (user?.error && session) redirect("/no-auth");
-
   return (
-    <div>
-      <div className="text-sm"></div>
+    <div className="isolate text-sm lg:text-base overflow-x-hidden overflow-y-scroll capitalize">
+      <DashboardWidget />
     </div>
   );
 };

@@ -1,8 +1,10 @@
+import { metadata } from "@/app/layout";
 import { auth } from "@/auth";
 import AuthForm from "@/components/auth/authForm";
 import React from "react";
 
 const Page = async () => {
+  metadata.title = "Revalidate Sign";
   const session = await auth();
 
   return (

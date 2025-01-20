@@ -2,8 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import React from "react";
-import Searchbar from "./items/searchbar";
-import Breadcrumb from "./breadcrumbs";
+import { Breadcrumb, SearchBar } from "./components";
 
 const TopbarFull = () => {
   const path = usePathname();
@@ -13,10 +12,11 @@ const TopbarFull = () => {
         <Breadcrumb link={path} />
       </div>
       <div>
-        <Searchbar
-          color="bg-slate-400/35"
-          hover="bg-slate-400/50"
-          focus="bg-slate-400/75"
+        <SearchBar
+          colorNormal="bg-gray-600/10"
+          colorHover="bg-gray-600/40"
+          colorFocus="bg-gray-600/55"
+          isLimited
         />
       </div>
     </div>

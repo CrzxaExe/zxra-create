@@ -17,6 +17,7 @@ import { CenterHr } from "@/components/hr";
 import mks from "@/package.json";
 import Footer from "@/components/footer";
 import { metadata } from "./layout";
+import { LinkButton, Motto } from "@/components/motionComponents";
 
 export default function Home() {
   metadata.title = "Create Zx";
@@ -26,12 +27,15 @@ export default function Home() {
       <Image
         alt="effect"
         src={bgEffect}
-        className="w-full -mb-[3rem] md:-mb-[5rem] lg:-mb-[8rem] xl:-mb-[12rem] 2xl:-mb-[21rem] object-contain opacity-50"
+        className="w-full -mb-[3rem] md:-mb-[5rem] lg:-mb-[8rem] xl:-mb-[12rem] 2xl:-mb-[21rem] mt-[16.5rem] lg:mt-[11.7rem] scale-y-[580%] lg:scale-y-[180%] object-contain opacity-50 -z-[1] relative"
       />
-      <section className="container max-w-screen-lg">
+      <section className="container max-w-screen-lg -mt-[20.5rem] lg:-mt-[32.7rem] z-[7]">
         <div className="min-h-screen overflow-hidden">
-          <div className="flex flex-row items-center justify-center mt-[6rem] lg:mt-[9vh] 2xl:mt-[12vh]">
-            <div className="px-3 py-5 w-full flex items-center justify-center flex-col lg:flex-row">
+          <div className="flex flex-row items-center justify-center mt-[6rem] lg:mt-[9vh] 2xl:mt-[8vh]">
+            <div
+              className="px-3 py-5 w-full flex items-center justify-center flex-col lg:flex-row"
+              id="logo"
+            >
               <Image
                 alt="logo"
                 src={logo}
@@ -42,32 +46,28 @@ export default function Home() {
             </div>
           </div>
           <div className="px-7 lg:mt-[1vh] 2xl:mt-[1rem]">
-            <h2 className="bg-gradient-to-r from-base-upascent to-base-ascent text-transparent bg-clip-text lg:text-center w-full text-4xl md:text-3xl lg:text-5xl mt-[3rem] lg:mt-[4rem] font-paprika font-semibold flex items-end lg:justify-center py-2">
+            <h2 className="bg-gradient-to-r from-base-upascent to-base-ascent text-transparent bg-clip-text lg:text-center w-full text-5xl md:text-4xl lg:text-5xl mt-[3.5rem] lg:mt-[4rem] font-valorant font-semibold flex items-end lg:justify-center py-2">
               Creating All Task Eazier Is Your Job
             </h2>
-            <p className="text-lg max-w-screen-lg md:text-xl lg:text-2xl 2xl:px-[9.5rem] w-full text-justify lg:text-center lg:px-[4.3rem] whitespace-normal mb-5 mt-[2vh] xl:mt-12 lg:mt-2 font-geistMono text-slate-400 mx-auto">
-              Mudahkan apapun dengan karya kami yang akan tersebar dimanapun dan
-              kapanpun.
-            </p>
+            <Motto />
             <div className="w-full flex flex-row lg:justify-center gap-4 mt-[4vh] lg:mt-[1.2rem] 2xl:mt-[2.4rem]">
               <Link
                 href="/sign"
-                className="flex justify-center items-center w-fit px-5 lg:px-8 py-2.5 lg:py-3 text-xl border border-base-upascent text-base-upascent rounded-3xl hover:bg-base-upascent hover:text-base-upfloor font-bold transition-all duration-300 ease-in-out shadow-md"
+                className="flex justify-center items-center w-fit px-5 lg:px-8 py-2.5 lg:py-3 lg:text-lg border border-base-upascent text-base-upascent rounded-2xl hover:bg-base-upascent hover:text-base-upfloor font-bold transition-all duration-300 ease-in-out shadow-md"
               >
                 Masuk
               </Link>
-              <Link
+              <LinkButton
                 href="/dashboard"
-                className="flex justify-center items-center w-fit px-5 lg:px-8 py-2.5 lg:py-3 text-xl bg-base-upascent border border-base-upascent text-base-upfloor hover:text-base-upascent rounded-3xl hover:bg-transparent font-bold transition-all duration-300 ease-in-out shadow-md"
-              >
-                Beranda
-              </Link>
+                text="Beranda"
+                className="flex justify-center items-center w-fit px-5 lg:px-8 py-2.5 lg:py-3 lg:text-lg bg-base-upascent border border-base-upascent text-base-upfloor hover:text-base-upascent rounded-2xl hover:bg-transparent font-bold transition-all duration-300 ease-in-out shadow-md"
+              />
             </div>
-            <p className="mt-[5vh] md:mt-[6vh] 2xl:mt-[2rem] text-slate-600 w-full px-6 lg:text-center font-geistMono">
+            <p className="mt-[5vh] md:mt-[6vh] 2xl:mt-[2rem] text-slate-600 w-full lg:px-6 lg:text-center font-geistMono">
               V{mks.version}
             </p>
 
-            <p className="mt-[5vh] md:mt-[10vh] 2xl:mt-[1.8rem] mb-[6vh] lg:mb-[3.6rem] 2xl:mb-[4.3rem] text-slate-400 w-full px-6 font-geistMono flex flex-row lg:justify-center items-center">
+            <p className="mt-[5vh] md:mt-[10vh] 2xl:mt-[1.8rem] mb-[6vh] lg:mb-[3.6rem] 2xl:mb-[4.3rem] text-slate-400 w-full lg:px-6 font-geistMono flex flex-row lg:justify-center items-center">
               Scroll kebawah untuk lihat selengkapnya{" "}
               <i className="bx bx-down-arrow-alt text-xl"></i>
             </p>
