@@ -35,7 +35,7 @@ const ProjectBase = async ({ project }: { project: Project }) => {
             className="rounded-lg aspect-square w-[6rem] md:w-[7rem] lg:w-[10rem]"
           />
         ) : (
-          <div className="rounded-lg aspect-square w-[6rem] lg:w-[12rem] bg-slate-800"></div>
+          <div className="rounded-lg aspect-square w-[6rem] lg:w-[10rem] bg-slate-800"></div>
         )}
         <div className="flex flex-col">
           <h1 className="font-bold text-xl md:text-2xl lg:text-3xl mb-1 md:mb-2">
@@ -81,15 +81,15 @@ const BzbDisplay = async ({ project }: { project: Project }) => {
             alt="Better Zxra Bedrock"
             width={1920}
             height={1080}
-            className="object-cover w-[32vw] aspect-video"
+            className="object-cover w-[28vw] aspect-video"
           />
         </div>
-        <p className="mt-3 text-sm md:text-base lg:text-lg indent-3 lg:indent-5 whitespace-normal">
+        <p className="mt-3 text-xs md:text-sm lg:text-base indent-3 lg:indent-5 whitespace-normal">
           {project.longDes}
         </p>
 
         <span className="mt-5 block">
-          Bahasa Pemrograman: {project.lang.join(", ")}
+          Programing Languange: {project.lang.join(", ")}
         </span>
       </div>
     </>
@@ -119,9 +119,13 @@ const ProjectTemplate = async ({ project }: { project: Project }) => {
       ) : (
         <>
           <ProjectBase project={project} />
-          <p className="mt-3 text-sm md:text-base lg:text-lg indent-3 lg:indent-5">
+          <p className="mt-3 text-xs md:text-sm lg:text-base indent-3 lg:indent-5 whitespace-normal">
             {project.longDes}
           </p>
+
+          <span className="mt-5 block">
+            Programing Languange: {project.lang.join(", ")}
+          </span>
         </>
       )}
     </div>

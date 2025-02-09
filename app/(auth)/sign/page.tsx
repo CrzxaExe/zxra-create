@@ -11,7 +11,7 @@ interface SectionProps {
   isLoginSection?: boolean;
 }
 
-const Page = ({ isLoginSection = false }: SectionProps) => {
+const Page = ({ isLoginSection }: SectionProps) => {
   metadata.title = "Sign";
 
   return (
