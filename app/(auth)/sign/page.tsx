@@ -17,7 +17,7 @@ const Page: React.FC<PageProps> = ({ isLoginSection = false }) => {
   return (
     <div className="w-full bg-base-upfloor/60 backdrop-blur-lg lg:rounded-xl max-w-screen-sm shadow-xl mt-1">
       <div className="grid grid-cols-2 gap-5 relative px-4 py-5">
-        <SliderSign isLogin={isLoginSection} />
+        <SliderSign isLoginSection={isLoginSection} />
         <div>
           <LoginForm />
           <div className="w-full">

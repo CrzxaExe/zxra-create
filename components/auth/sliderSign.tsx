@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { HowToRegRounded, LoginRounded } from "@mui/icons-material";
 
-const SliderSign = ({ isLogin }: { isLogin?: boolean }) => {
-  const [sign, setSign] = useState(isLogin || false);
+const SliderSign = ({ isLoginSection }: { isLoginSection?: boolean }) => {
+  const [sign, setSign] = useState(isLoginSection || false);
 
   return (
     <div
