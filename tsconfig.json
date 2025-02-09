@@ -27,7 +27,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "mongoose/models/account.js",
-    "lib/db.js"
+    "lib/db.ts"
   ],
   "exclude": ["node_modules"]
 }
