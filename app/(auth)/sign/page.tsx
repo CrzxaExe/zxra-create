@@ -7,7 +7,7 @@ import { GithubLoginButton } from "@/components/auth/authButton";
 import SliderSign from "@/components/auth/sliderSign";
 import { metadata } from "@/app/layout";
 
-const Page = ({ isLogin = false }: { isLogin?: boolean }) => {
+const Page = ({ isLogin = false }: { isLogin: boolean }) => {
   metadata.title = "Sign";
 
   return (
