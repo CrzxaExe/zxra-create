@@ -7,11 +7,11 @@ import { GithubLoginButton } from "@/components/auth/authButton";
 import SliderSign from "@/components/auth/sliderSign";
 import { metadata } from "@/app/layout";
 
-interface PageProps {
+interface SectionProps {
   isLoginSection?: boolean;
 }
 
-const Page: React.FC<PageProps> = ({ isLoginSection = false }) => {
+const Page = ({ isLoginSection = false }: SectionProps) => {
   metadata.title = "Sign";
 
   return (

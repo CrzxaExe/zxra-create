@@ -84,7 +84,7 @@ const BzbDisplay = async ({ project }: { project: Project }) => {
             className="object-cover w-[32vw] aspect-video"
           />
         </div>
-        <p className="mt-3 text-sm md:text-base lg:text-lg indent-3 lg:indent-5">
+        <p className="mt-3 text-sm md:text-base lg:text-lg indent-3 lg:indent-5 whitespace-normal">
           {project.longDes}
         </p>
 
