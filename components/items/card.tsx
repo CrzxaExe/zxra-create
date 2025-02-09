@@ -26,8 +26,8 @@ const Card = ({
   return (
     <>
       <Link
-        href={data.href ? data.href : ""}
-        className="w-full aspect-square bg-slate-700 block h-max max-h-[5rem] rounded-lg relative hover:scale-110 transition-all duration-150 ease-in-out origin-center"
+        href={"/projects/" + data.name.split(" ").join("-").toLowerCase()}
+        className="w-full aspect-square bg-slate-700 block max-h-full overflow-visible rounded-lg relative hover:scale-110 transition-all duration-150 ease-in-out"
       >
         {data.version && (
           <span className="absolute bottom-1 left-1 px-1 text-xs font-valorant">

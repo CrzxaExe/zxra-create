@@ -67,14 +67,20 @@ const Breadcrumb = ({ link }: { link: string }) => {
               key={i}
               className="text-teal-500 font-geistSans hover:text-teal-200 focus:text-teal-700 transition-all duration-300 ease-in-out hover:scale-110"
             >
-              {e.charAt(0).toUpperCase() + e.slice(1)}
+              {e
+                .split("-")
+                .map((r) => r.charAt(0).toUpperCase() + r.slice(1))
+                .join(" ")}
             </Link>
           ) : (
             <span
               key={i}
               className="capitalize cursor-pointer text-teal-500 font-geistSans hover:text-teal-200 focus:text-teal-700 transition-all duration-300 ease-in-out hover:scale-110"
             >
-              {e}
+              {e
+                .split("-")
+                .map((r) => r.charAt(0).toUpperCase() + r.slice(1))
+                .join(" ")}
             </span>
           );
         })}
@@ -131,7 +137,7 @@ const SearchBar = ({
 
 const DashboardWidget = () => {
   return (
-    <div className="w-full bg-[#34343440] h-[6em] lg:h-[6.8em] flex flex-row flex-wrap basis-2 items-center rounded-lg overflow-x-scroll overflow-y-hidden">
+    <div className="w-full bg-[#34343440] h-[6em] lg:h-[6.8em] flex flex-row flex-wrap basis-2 gap-2 items-center rounded-lg overflow-x-scroll overflow-y-hidden">
       <Clock />
     </div>
   );
@@ -155,7 +161,7 @@ const Clock = () => {
 
   return (
     <div className="flex flex-row items-center justify-center bg-[#343434] rounded-xl p-3 shadow-md aspect-square min-h-full max-h-full">
-      <span className="font-mono text-base lg:text-lg text-slate-200 font-bold text-pretty">
+      <span className="font-mono text-base lg:text-lg text-slate-200 font-semibold text-pretty">
         {day.format("hh:mm")}
       </span>
     </div>

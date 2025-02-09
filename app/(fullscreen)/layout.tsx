@@ -1,7 +1,7 @@
 import { RightHr } from "@/components/hr";
 import React from "react";
 
-import { Newspaper, PeopleOutline } from "@mui/icons-material";
+import { Newspaper, PeopleOutline, FolderOpenSharp } from "@mui/icons-material";
 import logo from "@/app/asset/Zxra-full.png";
 import Link from "next/link";
 import TopbarFull from "@/components/topbarFull";
@@ -39,6 +39,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               >
                 <Newspaper />
                 <span className="font-bold hidden lg:block">Dashboard</span>
+              </Link>
+            </li>
+            <li className="w-full rounded-r-lg text-base transition-all duration-300 ease-in-out lg:hover:bg-base-upfloor lg:hover:scale-110 lg:hover:pl-1">
+              <Link
+                href="/projects"
+                className="flex flex-row gap-4 items-center py-2 px-3"
+              >
+                <FolderOpenSharp />
+                <span className="font-bold hidden lg:block">Projects</span>
               </Link>
             </li>
             <li className="w-full rounded-r-lg text-base transition-all duration-300 ease-in-out lg:hover:bg-base-upfloor lg:hover:scale-110 lg:hover:pl-1">
