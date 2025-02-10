@@ -7,17 +7,13 @@ import { GithubLoginButton } from "@/components/auth/authButton";
 import SliderSign from "@/components/auth/sliderSign";
 import { metadata } from "@/app/layout";
 
-interface SectionProps {
-  isLoginSection?: boolean;
-}
-
-const Page = ({ isLoginSection }: SectionProps) => {
+const Page = async () => {
   metadata.title = "Sign";
 
   return (
     <div className="w-full bg-base-upfloor/60 backdrop-blur-lg lg:rounded-xl max-w-screen-sm shadow-xl mt-1">
       <div className="grid grid-cols-2 gap-5 relative px-4 py-5">
-        <SliderSign isLoginSection={isLoginSection} />
+        <SliderSign />
         <div>
           <LoginForm />
           <div className="w-full">

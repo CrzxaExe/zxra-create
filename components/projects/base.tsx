@@ -32,26 +32,26 @@ const ProjectBase = async ({ project }: { project: Project }) => {
             alt={project.name}
             width={200}
             height={200}
-            className="rounded-lg aspect-square w-[6rem] md:w-[7rem] lg:w-[10rem]"
+            className="rounded-lg aspect-square w-[6rem] lg:w-[8rem]"
           />
         ) : (
-          <div className="rounded-lg aspect-square w-[6rem] lg:w-[10rem] bg-slate-800"></div>
+          <div className="rounded-lg aspect-square w-[6rem] lg:w-[8rem] bg-slate-800"></div>
         )}
         <div className="flex flex-col">
-          <h1 className="font-bold text-xl md:text-2xl lg:text-3xl mb-1 md:mb-2">
+          <h1 className="font-bold text-xl md:text-2xl lg:text-3xl md:mb-1">
             {project.name}
           </h1>
           <span className="font-sans text-sm md:text-base lg:text-lg text-slate-200">
             {project.app}
           </span>
-          <h3 className="font-mono text-xs md:text-sm lg:text-base text-slate-400 lg:-mt-1 mb-1">
+          <h3 className="font-mono text-xs md:text-sm lg:text-base text-slate-400 lg:-mt-2">
             {project.version}
           </h3>
 
           <span
             className={`${
               PROJECT_STATUS[project.status].color
-            } -mt-1 md:mt-1 lg:mt-9 w-full`}
+            } -mt-1 md:mt-1 lg:mt-4 w-full`}
           >
             {PROJECT_STATUS[project.status].text}
           </span>
