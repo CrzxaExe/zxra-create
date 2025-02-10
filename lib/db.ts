@@ -10,10 +10,7 @@ export const ConnectDB = async () => {
   try {
     if (defaultConnection) return defaultConnection;
 
-    const db = await mongoose.connect(mongo, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const db = await mongoose.connect(mongo);
 
     defaultConnection = db.connection;
     console.log("Connected to database");
