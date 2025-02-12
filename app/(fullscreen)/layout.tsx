@@ -63,7 +63,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
         <div className="w-[90%] sm:w-[93%] lg:w-[84%] h-fill">
           <TopbarFull />
-          <div className="overflow-y-scroll max-h-screen pt-4 px-[1rem] lg:px-[1.2rem]">
+          <div className="overflow-y-hidden max-h-screen pt-1 px-[1rem] lg:px-[1.2rem]">
             {children}
           </div>
         </div>

@@ -48,7 +48,7 @@ const Breadcrumb = ({ link }: { link: string }) => {
     <Breadcrumbs
       aria-label="breadcrumbs"
       separator="/"
-      className="font-bold text-lg lg:text-xl font-mono text-slate-200"
+      className="font-bold text-lg lg:text-xl font-sans text-slate-200"
     >
       {link
         .slice(1)
@@ -65,7 +65,7 @@ const Breadcrumb = ({ link }: { link: string }) => {
                   .join("/")
               }
               key={i}
-              className="text-teal-500 font-geistSans hover:text-teal-200 focus:text-teal-700 transition-all duration-300 ease-in-out hover:scale-110"
+              className="text-teal-500 hover:text-teal-200 focus:text-teal-700 transition-all duration-300 ease-in-out hover:scale-110"
             >
               {e
                 .split("-")
@@ -75,7 +75,7 @@ const Breadcrumb = ({ link }: { link: string }) => {
           ) : (
             <span
               key={i}
-              className="capitalize cursor-pointer text-teal-500 font-geistSans hover:text-teal-200 focus:text-teal-700 transition-all duration-300 ease-in-out hover:scale-110"
+              className="capitalize cursor-pointer text-teal-500 hover:text-teal-200 focus:text-teal-700 transition-all duration-300 ease-in-out hover:scale-110"
             >
               {e
                 .split("-")
@@ -168,4 +168,56 @@ const Clock = () => {
   );
 };
 
-export { Breadcrumb, Clock, DashboardWidget, SearchBar, TextField };
+const SubSectionWithHeader = ({
+  name,
+  className,
+  children,
+  id,
+}: {
+  name: string;
+  className?: string;
+  id?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <section className={`${className} mt-4`} id={id}>
+      <h1 className="text-teal-400 text-lg md:text-xl lg:text-2xl font-bold">
+        {name}
+      </h1>
+
+      {children}
+    </section>
+  );
+};
+
+const DivWithHeader = ({
+  name,
+  className,
+  children,
+  id,
+}: {
+  name: string;
+  className?: string;
+  id?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <div className={`${className}`} id={id}>
+      <h1 className="text-teal-600 text-lg md:text-xl lg:text-2xl font-bold">
+        {name}
+      </h1>
+
+      {children}
+    </div>
+  );
+};
+
+export {
+  Breadcrumb,
+  Clock,
+  DashboardWidget,
+  SearchBar,
+  SubSectionWithHeader,
+  DivWithHeader,
+  TextField,
+};
