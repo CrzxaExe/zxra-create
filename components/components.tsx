@@ -48,7 +48,7 @@ const Breadcrumb = ({ link }: { link: string }) => {
     <Breadcrumbs
       aria-label="breadcrumbs"
       separator="/"
-      className="font-bold text-lg lg:text-xl font-sans text-slate-200"
+      className="font-bold text-lg lg:text-xl font-geistSans text-slate-200"
     >
       {link
         .slice(1)

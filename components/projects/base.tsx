@@ -185,7 +185,7 @@ const BzbDisplay = async ({ project }: { project: Project }) => {
       <SubSectionWithHeader id="features" className="mt-5" name="Features">
         <div className="mt-3 bg-[#202020] px-4 w-full py-3">
           <DivWithHeader id="language" name="Language">
-            <p>
+            <p className="mt-1 text-xs lg:text-sm">
               For now, available language for this addon are 2 only.{" "}
               <span className="text-sky-400">Indonesia</span> and{" "}
               <span className="text-sky-400">English</span>
@@ -220,7 +220,7 @@ const BzbDisplay = async ({ project }: { project: Project }) => {
           For helping us and contributing for this addon development and
           testing.
           <br /> We will always hear your feedback and suggestion for this
-          addon. Thanks -Zrxa
+          addon. Thanks -Zxra
         </p>
       </SubSectionWithHeader>
     </>
