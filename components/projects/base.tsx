@@ -3,6 +3,7 @@ import React from "react";
 
 import { GitHub } from "@mui/icons-material";
 import { DivWithHeader, SubSectionWithHeader } from "../components";
+// import axios from "axios"
 
 interface Link {
   github?: string;
@@ -190,6 +191,13 @@ const BzbDisplay = async ({ project }: { project: Project }) => {
               <span className="text-sky-400">Indonesia</span> and{" "}
               <span className="text-sky-400">English</span>
             </p>
+          </DivWithHeader>
+          <DivWithHeader id="weapon" name="Weapons" className="mt-7">
+            <input
+              type="text"
+              placeholder="Weapon name"
+              className="block px-4 rounded-lg py-0.5 w-full max-w-[21rem] bg-[#323232] outline-none mt-4"
+            />
           </DivWithHeader>
         </div>
       </SubSectionWithHeader>

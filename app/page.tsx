@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import logo from "@/app/asset/zx.png";
 import bgEffect from "@/app/asset/bg_effect.png";
@@ -7,7 +6,6 @@ import bgEffect from "@/app/asset/bg_effect.png";
 import {
   AspectRatioRounded,
   UpdateRounded,
-  LinkRounded,
   BoltRounded,
   CleaningServicesRounded,
 } from "@mui/icons-material";
@@ -17,7 +15,13 @@ import { CenterHr } from "@/components/hr";
 import mks from "@/package.json";
 import Footer from "@/components/footer";
 import { metadata } from "./layout";
-import { LinkButton, Motto } from "@/components/motionComponents";
+import {
+  LinkButton,
+  Motto,
+  OldWebPreview,
+  OldWebReview,
+  Tagline,
+} from "@/components/motionComponents";
 
 export default function Home() {
   metadata.title = "Create Zx";
@@ -46,21 +50,18 @@ export default function Home() {
             </div>
           </div>
           <div className="px-7 lg:mt-[1vh] 2xl:mt-[1rem]">
-            <h2 className="bg-gradient-to-r from-base-upascent to-base-ascent text-transparent bg-clip-text lg:text-center w-full text-5xl md:text-4xl lg:text-5xl mt-[3.5rem] lg:mt-[4rem] font-valorant font-semibold flex items-end lg:justify-center py-2">
-              Creating All Task Eazier Is Your Job
-            </h2>
+            <Tagline />
             <Motto />
             <div className="w-full flex flex-row lg:justify-center gap-4 mt-[4vh] lg:mt-[1.2rem] 2xl:mt-[2.4rem]">
-              <Link
+              <LinkButton
+                text="Masuk"
                 href="/sign"
-                className="flex justify-center items-center w-fit px-5 lg:px-8 py-2.5 lg:py-3 lg:text-lg border border-base-upascent text-base-upascent rounded-2xl hover:bg-base-upascent hover:text-base-upfloor font-bold transition-all duration-300 ease-in-out shadow-md"
-              >
-                Masuk
-              </Link>
+                className="flex justify-center items-center w-fit px-5 lg:px-8 py-2.5 lg:py-3 lg:text-lg border border-base-upascent text-base-upascent rounded-2xl hover:bg-base-upascent hover:text-base-upfloor font-bold  shadow-md"
+              />
               <LinkButton
                 href="/dashboard"
                 text="Beranda"
-                className="flex justify-center items-center w-fit px-5 lg:px-8 py-2.5 lg:py-3 lg:text-lg bg-base-upascent border border-base-upascent text-base-upfloor hover:text-base-upascent rounded-2xl hover:bg-transparent font-bold transition-all duration-300 ease-in-out shadow-md"
+                className="flex justify-center items-center w-fit px-5 lg:px-8 py-2.5 lg:py-3 lg:text-lg bg-base-upascent border border-base-upascent text-base-upfloor hover:text-base-upascent rounded-2xl hover:bg-transparent font-bold shadow-md"
               />
             </div>
             <p className="mt-[5vh] md:mt-[6vh] 2xl:mt-[2rem] text-slate-600 w-full lg:px-6 lg:text-center font-geistMono">
@@ -78,79 +79,8 @@ export default function Home() {
 
         <section className="min-h-screen mt-9">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-5">
-            <div className="px-5 py-2">
-              <h6 className="text-base lg:text-lg text-slate-500">Apa itu</h6>
-              <h1 className="-mt-1 text-6xl lg:text-5xl font-geistSans font-medium text-base-upascent">
-                Create Zx
-              </h1>
-
-              <p className="text-base lg:text-2xl mt-6 text-left text-slate-300">
-                Sebuah aplikasi website yang merupakan media informasi tentang{" "}
-                <Link href="/about" className="text-cyan-300">
-                  Zxra
-                </Link>{" "}
-                serta menyediakan alat yang akan berguna bagi semua orang.
-              </p>
-
-              <p className="text-base lg:text-2xl mt-6 text-left text-slate-300">
-                Aplikasi ini lebih lengkap dan canggih dari pada website
-                terdahulu, namun keduanya tetap open source dan bisa di cek di
-                github leader kami
-              </p>
-
-              <p className="text-base lg:text-xl mt-6 text-left text-slate-300">
-                Aplikasi ini menggunakan Typescript dan juga kami mengubah
-                frameworknya juga
-              </p>
-
-              <span className="text-cyan-400 font-bold mt-6 text-xl block">
-                Zxra React Repo
-              </span>
-              <div className=" bg-base-ascent px-3 py-2 text-slate-200 rounded-lg shadow-lg flex flex-row items-center">
-                <input
-                  type="text"
-                  readOnly
-                  value="https://github.com/CrzxaExe/zxra-reactjs"
-                  className="outline-none bg-transparent w-full"
-                />
-                <a
-                  href="https://github.com/CrzxaExe/zxra-reactjs"
-                  className="px-1 py-1 hover:text-base-upascent"
-                >
-                  <LinkRounded />
-                </a>
-              </div>
-            </div>
-            <div className="px-5 py-4">
-              <div className="bg-base-ascent/40 rounded-xl backdrop-blur-xl shadow-2xl shadow-base-ascent/40 w-full min-h-fit lg:min-h-full px-5 py-3 resize-none outline-none overflow-y-hidden overflow-x-clip">
-                <span className="text-cyan-400 text-lg lg:text-xl font-paprika font-bold">
-                  Zxra React
-                </span>
-
-                <span className="text-base text-slate-300 block mt-2">
-                  Project terdahulu
-                </span>
-
-                <div className="flex justify-center items-center">
-                  <div className="flex flex-row mt-5 pb-4 px-2 shad">
-                    <Image
-                      alt="ss2"
-                      src="https://raw.githubusercontent.com/CrzxaExe/CrzxaExe/refs/heads/main/asset/Screenshot%202024-11-22%20202044.png"
-                      width={280}
-                      height={280}
-                      className="z-[0] -skew-y-2 shadow-xl"
-                    />
-                    <Image
-                      alt="ss1"
-                      src="https://raw.githubusercontent.com/CrzxaExe/CrzxaExe/refs/heads/main/asset/Screenshot%202024-11-22%20201950.png"
-                      width={300}
-                      height={300}
-                      className="z-[1] -ml-[12.4rem] mt-[2%] -skew-y-6 shadow-xl"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <OldWebReview />
+            <OldWebPreview />
           </div>
 
           <h1 className="text-xl lg:text-3xl text-base-upascent font-bold px-5 mt-4">
