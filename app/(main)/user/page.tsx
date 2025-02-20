@@ -15,7 +15,7 @@ const Page = async () => {
   metadata.title = user?.name || session?.user?.name;
 
   return (
-    <div className="mt-[6rem] max-w-screen-xl px-10 mx-auto">
+    <div className="mt-[6rem] max-w-(--breakpoint-xl) px-10 mx-auto">
       <div className="w-full max-h-[250px] h-[14.7vw] bg-slate-500"></div>
 
       <div className="w-full -mt-[6.7vw] px-[1.5rem] flex flex-row items-center gap-[2.4vw]">
@@ -49,7 +49,7 @@ const Page = async () => {
         <input
           type="text"
           value={user?.id || session?.user?.id || "-"}
-          className="bg-slate-800 text-slate-400 px-3 py-2 w-full outline-none rounded-lg"
+          className="bg-slate-800 text-slate-400 px-3 py-2 w-full outline-hidden rounded-lg"
           readOnly
         />
 
@@ -57,7 +57,7 @@ const Page = async () => {
         <input
           type="text"
           value={user?.email || session?.user?.email || "none@gmail.com"}
-          className="bg-slate-800 text-slate-400 px-3 py-2 w-full outline-none rounded-lg"
+          className="bg-slate-800 text-slate-400 px-3 py-2 w-full outline-hidden rounded-lg"
           readOnly
         />
 

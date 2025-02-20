@@ -3,9 +3,13 @@
 import React from "react";
 import axios from "axios";
 import { ProjectTemplate } from "@/components/projects/base";
+import { metadata } from "@/app/layout";
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { data } = await axios.get("https://zxra-rest.vercel.app/project-list");
+  const weapon = await axios.get("https://zxra-rest.vercel.app/bzbweapon");
+
+  metadata.title = "Project Item";
 
   const id = (await params).id;
 
@@ -16,7 +20,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <div className="max-h-screen overflow-x-hidden overflow-y-scroll pb-[6rem] pr-3 scroll-px-0">
-      <ProjectTemplate project={project} />
+      <ProjectTemplate project={project} weapon={weapon} />
     </div>
   );
 };

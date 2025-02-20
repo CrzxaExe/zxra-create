@@ -14,7 +14,7 @@ const RegisterForm = () => {
       <form action={formAction} className="w-full">
         {state?.message ? (
           <div
-            className="p-4 mb-3 text-rose-800 rounded bg-rose-200"
+            className="p-4 mb-3 text-rose-800 rounded-sm bg-rose-200"
             role="alert"
           >
             <span className="font-medium ">{state?.message}</span>

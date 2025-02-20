@@ -12,7 +12,7 @@ const SliderSign = () => {
         sign.isLogin
           ? "right-[50%] rounded-r-xl rounded-l-none"
           : "right-0 rounded-l-xl rounded-r-none"
-      } bg-base-ascent min-h-full lg:rounded-2xl absolute z-[1] w-1/2 py-4 px-5 transition-all duration-200 ease-in-out`}
+      } bg-base-ascent min-h-full lg:rounded-2xl absolute z-1 w-1/2 py-4 px-5 transition-all duration-200 ease-in-out`}
     >
       <div className="w-full block relative">
         {sign.isLogin ? (

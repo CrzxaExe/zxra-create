@@ -17,7 +17,7 @@ const AuthForm = ({ ant }: { ant: any }) => {
 
         {state?.message ? (
           <div
-            className="p-4 mb-4 text-rose-800 rounded bg-rose-200"
+            className="p-4 mb-4 text-rose-800 rounded-sm bg-rose-200"
             role="alert"
           >
             <span className="font-medium ">{state?.message}</span>
@@ -31,7 +31,7 @@ const AuthForm = ({ ant }: { ant: any }) => {
           type="text"
           name="name"
           placeholder={ant?.user?.name}
-          className="w-full block bg-slate-400 text-slate-700 outline-none px-3 py-2 rounded-lg placeholder:text-slate-700"
+          className="w-full block bg-slate-400 text-slate-700 outline-hidden px-3 py-2 rounded-lg placeholder:text-slate-700"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">
@@ -46,7 +46,7 @@ const AuthForm = ({ ant }: { ant: any }) => {
           type="email"
           name="email"
           placeholder={ant?.user?.email}
-          className="w-full block bg-slate-400 text-slate-700 outline-none px-3 py-2 rounded-lg placeholder:text-slate-700"
+          className="w-full block bg-slate-400 text-slate-700 outline-hidden px-3 py-2 rounded-lg placeholder:text-slate-700"
         />
         <div aria-live="polite" aria-atomic="true">
           <span className="text-sm text-rose-400 mt-2">

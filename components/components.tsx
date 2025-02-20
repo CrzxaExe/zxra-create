@@ -31,7 +31,7 @@ const TextField = ({
         type={type}
         name={name}
         placeholder={placeholder}
-        className="pt-5 bg-transparent text-slate-200 valid:text-green-400 invalid:text-red outline-none w-full py-[0.13rem] isolate placeholder:opacity-0 peer focus:placeholder:opacity-100 placeholder:transition-all placeholder:duration-300 placeholder:ease-in-out"
+        className="pt-5 bg-transparent text-slate-200 valid:text-green-400 invalid:text-red outline-hidden w-full py-[0.13rem] isolate placeholder:opacity-0 peer focus:placeholder:opacity-100 placeholder:transition-all placeholder:duration-300 placeholder:ease-in-out"
       />
       <label
         htmlFor={name}
@@ -129,7 +129,7 @@ const SearchBar = ({
             SearchEvent(target.value.replace(/ /, "%20"));
           }
         }}
-        className="bg-transparent px-1 outline-none placeholder:text-slate-300/60 focus:text-base-upascent transitiion-all duration-300 ease-in-out"
+        className="bg-transparent px-1 outline-hidden placeholder:text-slate-300/60 focus:text-base-upascent transitiion-all duration-300 ease-in-out"
       />
     </div>
   );

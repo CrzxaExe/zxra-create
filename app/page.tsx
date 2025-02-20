@@ -31,9 +31,9 @@ export default function Home() {
       <Image
         alt="effect"
         src={bgEffect}
-        className="w-full -mb-[3rem] md:-mb-[5rem] lg:-mb-[8rem] xl:-mb-[12rem] 2xl:-mb-[21rem] mt-[16.5rem] lg:mt-[11.7rem] scale-y-[580%] lg:scale-y-[180%] object-contain opacity-50 -z-[1] relative"
+        className="w-full -mb-[3rem] md:-mb-[5rem] lg:-mb-[8rem] xl:-mb-[12rem] 2xl:-mb-[21rem] mt-[16.5rem] lg:mt-[11.7rem] scale-y-[580%] lg:scale-y-[180%] object-contain opacity-50 -z-1 relative"
       />
-      <section className="container max-w-screen-lg -mt-[20.5rem] lg:-mt-[32.7rem] z-[7]">
+      <section className="container max-w-(--breakpoint-lg) -mt-[20.5rem] lg:-mt-[32.7rem] z-7 overflow-x-hidden">
         <div className="min-h-screen overflow-hidden">
           <div className="flex flex-row items-center justify-center mt-[6rem] lg:mt-[9vh] 2xl:mt-[8vh]">
             <div

@@ -20,9 +20,9 @@ const News = ({ news }: { news: NewsData }) => {
         alt="News"
         width={400}
         height={300}
-        className="w-full md:max-w-[60%] transition-all duration-300 ease-in-out rounded-xl relative shadow"
+        className="w-full md:max-w-[60%] transition-all duration-300 ease-in-out rounded-xl relative shadow-sm"
       />
-      <div className="relative hidden md:block top-1 md:top-0 w-full h-full md:ml-4 md:bg-slate-700 shadow rounded-xl md:backdrop-blur-sm md:h-[32vw] md:max-h-[310px] lg:max-h-[350px] xl:max-h-[340px]">
+      <div className="relative hidden md:block top-1 md:top-0 w-full h-full md:ml-4 md:bg-slate-700 shadow-sm rounded-xl md:backdrop-blur-xs md:h-[32vw] md:max-h-[310px] lg:max-h-[350px] xl:max-h-[340px]">
         <h1 className="inline ml-8 md:ml-3 px-7 font-paprika text-base md:text-lg xl:text-xl">
           <a href="/news" target="blank" className="text-teal-200 md:hidden">
             {title}

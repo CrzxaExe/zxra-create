@@ -8,7 +8,7 @@ const UpdateForm = ({ user }: { user: { name: string; status: string } }) => {
         type="text"
         name="name"
         placeholder={user?.name || "User"}
-        className="bg-slate-950 text-slate-400 px-3 py-2 w-full outline-none rounded-lg"
+        className="bg-slate-950 text-slate-400 px-3 py-2 w-full outline-hidden rounded-lg"
       />
 
       <h1 className="test-base mt-2">Status</h1>
@@ -16,7 +16,7 @@ const UpdateForm = ({ user }: { user: { name: string; status: string } }) => {
         type="text"
         name="status"
         placeholder={user?.status || "-"}
-        className="bg-slate-950 text-slate-400 px-3 py-2 w-full outline-none rounded-lg"
+        className="bg-slate-950 text-slate-400 px-3 py-2 w-full outline-hidden rounded-lg"
       />
 
       <button

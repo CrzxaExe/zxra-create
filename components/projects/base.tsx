@@ -2,8 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 import { GitHub } from "@mui/icons-material";
-import { DivWithHeader, SubSectionWithHeader } from "../components";
-// import axios from "axios"
+import { BzbDisplay } from "./bzb";
 
 interface Link {
   github?: string;
@@ -140,121 +139,42 @@ const ProjectBase = async ({ project }: { project: Project }) => {
   );
 };
 
-const BzbDisplay = async ({ project }: { project: Project }) => {
-  const thanks = [
-    "FySena & Member Vanguard SMP",
-    "Garmadon't (FB)",
-    "Haris Adhi Saputra njir (FB)",
-    "Nugraha tai (FB)",
-    "Rahmad",
-    "Omen (FB)",
-  ];
-
-  return (
-    <>
-      <section id="overview" className="mt-6">
-        <div className="bg-[#202020] rounded p-3">
-          <h1 className="mb-1 text-lg md:text-xl lg:text-2xl font-bold text-teal-400">
-            Overview
-          </h1>
-          <p className="text-sm md:text-base whitespace-pre-line w-full text-gray-400">
-            {project.longDes}
-          </p>
-
-          <span className="mt-2 block text-sm lg:text-lg">
-            Programming Languange: {project.lang.join(", ")}
-          </span>
-        </div>
-
-        <div className="rounded-lg overflow-x-scroll overflow-y-hidden flex flex-row justify-start max-w-full max-h-[20rem] lg:max-h-[19rem] bg-[#202020] mt-4">
-          <Image
-            src="https://raw.githubusercontent.com/CrzxaExe/quick-bzb/refs/heads/master/img/render.png"
-            alt="Better Zxra Bedrock"
-            width={1920}
-            height={1080}
-            className="object-cover w-[47vw] lg:w-[23vw] aspect-video"
-          />
-        </div>
-      </section>
-
-      <section id="new" className="mt-5">
-        <h1 className="text-teal-400 text-lg md:text-xl lg:text-2xl font-bold">
-          What&apos;s New on v{project.version}?
-        </h1>
-      </section>
-
-      <SubSectionWithHeader id="features" className="mt-5" name="Features">
-        <div className="mt-3 bg-[#202020] px-4 w-full py-3">
-          <DivWithHeader id="language" name="Language">
-            <p className="mt-1 text-xs lg:text-sm">
-              For now, available language for this addon are 2 only.{" "}
-              <span className="text-sky-400">Indonesia</span> and{" "}
-              <span className="text-sky-400">English</span>
-            </p>
-          </DivWithHeader>
-          <DivWithHeader id="weapon" name="Weapons" className="mt-7">
-            <input
-              type="text"
-              placeholder="Weapon name"
-              className="block px-4 rounded-lg py-0.5 w-full max-w-[21rem] bg-[#323232] outline-none mt-4"
-            />
-          </DivWithHeader>
-        </div>
-      </SubSectionWithHeader>
-
-      <SubSectionWithHeader id="about" className="mt-9" name="About">
-        <p className="text-sm lg:text-base whitespace-pre-line w-full block">
-          This addon is still in development, we will update lively for fixing
-          bugs and increasing this performance. We also adding 3rd party and own
-          module to use this addon function in your own world.{" "}
-          <a href="/projects/zxralib" className="text-cyan-500 hover:underline">
-            Here
-          </a>{" "}
-          you can download the module.
-          <br />
-          <br />
-          Thanks for using this addon, and special thanks for:
-          <br />
-        </p>
-        <ul className="list-disc ml-5">
-          {thanks.map((e, i) => (
-            <li key={i} className="text-sm lg:text-base">
-              {e}
-            </li>
-          ))}
-        </ul>
-        <p className="text-sm lg:text-base whitespace-pre-line w-full block">
-          <br />
-          For helping us and contributing for this addon development and
-          testing.
-          <br /> We will always hear your feedback and suggestion for this
-          addon. Thanks -Zxra
-        </p>
-      </SubSectionWithHeader>
-    </>
-  );
-};
-
-const CustomProjectTemplate = async ({ project }: { project: Project }) => {
+const CustomProjectTemplate = ({
+  project,
+  weapon,
+}: {
+  project: Project;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  weapon: any;
+}) => {
   return (
     <>
       <ProjectBase project={project} />
       {
         {
-          "Better Zxra Bedrock": <BzbDisplay project={project} />,
+          "Better Zxra Bedrock": (
+            <BzbDisplay project={project} weapon={weapon.data} />
+          ),
         }[project.name]
       }
     </>
   );
 };
 
-const ProjectTemplate = ({ project }: { project: Project }) => {
+const ProjectTemplate = ({
+  project,
+  weapon,
+}: {
+  project: Project;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  weapon: any;
+}) => {
   const customPageName = ["Better Zxra Bedrock"];
 
   return (
     <div className="pl-2 lg:pl-3 mt-5">
       {customPageName.includes(project.name) ? (
-        <CustomProjectTemplate project={project}></CustomProjectTemplate>
+        <CustomProjectTemplate project={project} weapon={weapon} />
       ) : (
         <>
           <ProjectBase project={project} />

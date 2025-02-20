@@ -29,7 +29,7 @@ const sosmed = [
 const Footer = ({ className }: { className?: string }) => {
   return (
     <footer
-      className={`${className} bg-primary-950 w-full pt-[5rem] pb-[5rem] text-slate-400 text-base shadow`}
+      className={`${className} bg-primary-950 w-full pt-[5rem] pb-[5rem] text-slate-400 text-base shadow-sm`}
     >
       <div className="px-[6vw] md:px-[3.8vw] lg:px-[2.5vw] xl:px-[3.3vw] 2xl:px-[17.5%] mb-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
         <div className="">
