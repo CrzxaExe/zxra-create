@@ -48,7 +48,7 @@ const Breadcrumb = ({ link }: { link: string }) => {
     <Breadcrumbs
       aria-label="breadcrumbs"
       separator="/"
-      className="font-bold text-lg lg:text-xl font-geistSans text-slate-200"
+      className="font-bold text-lg lg:text-xl font-valorant text-slate-200"
     >
       {link
         .slice(1)
@@ -65,7 +65,7 @@ const Breadcrumb = ({ link }: { link: string }) => {
                   .join("/")
               }
               key={i}
-              className="text-teal-500 hover:text-teal-200 focus:text-teal-700 transition-all duration-300 ease-in-out hover:scale-110"
+              className="text-teal-500 hover:text-teal-200 focus:text-teal-700 transition-all duration-300 ease-in-out hover:scale-110 font-valorant"
             >
               {e
                 .split("-")
@@ -75,7 +75,7 @@ const Breadcrumb = ({ link }: { link: string }) => {
           ) : (
             <span
               key={i}
-              className="capitalize cursor-pointer text-teal-500 hover:text-teal-200 focus:text-teal-700 transition-all duration-300 ease-in-out hover:scale-110"
+              className="capitalize cursor-pointer text-teal-500 hover:text-teal-200 focus:text-teal-700 transition-all duration-300 ease-in-out hover:scale-110 font-valorant"
             >
               {e
                 .split("-")

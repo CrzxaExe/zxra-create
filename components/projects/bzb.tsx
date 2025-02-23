@@ -3,6 +3,7 @@
 import { WeaponInput } from "@/lib/hooks";
 import Image from "next/image";
 import { DivWithHeader, SubSectionWithHeader } from "../components";
+import { useState } from "react";
 
 interface Link {
   github?: string;
@@ -48,32 +49,32 @@ const weaponTraits: any = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const weaponIcon: any = {
   artsword:
-    "https://raw.githubusercontent.com/CrzxaExe/Zxra-web/refs/heads/master/img/icon/artsword.png?token=GHSAT0AAAAAAC5FHAPCU3I7B7EAOIU2EAVSZ5VXDTA",
+    "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/artsword.png",
   breifcase:
-    "https://raw.githubusercontent.com/CrzxaExe/Zxra-web/refs/heads/master/img/icon/breifcase.png?token=GHSAT0AAAAAAC5FHAPCOJI5KATPBPMOJUPGZ5VYYFA",
+    "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/breifcase.png",
   century:
-    "https://raw.githubusercontent.com/CrzxaExe/Zxra-web/refs/heads/master/img/icon/century.png?token=GHSAT0AAAAAAC5FHAPDKWV3YLBPUQ5IJZL4Z5VYXXQ",
+    "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/century.png",
   dagger:
     "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/dagger.png",
   flute:
     "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/flute.png",
   greatsword:
-    "https://raw.githubusercontent.com/CrzxaExe/Zxra-web/refs/heads/master/img/icon/greatsword.png?token=GHSAT0AAAAAAC5FHAPC2F7MGLZ5NXVS4MGMZ5VYYWQ",
-  gun: "https://raw.githubusercontent.com/CrzxaExe/Zxra-web/refs/heads/master/img/icon/gun.png?token=GHSAT0AAAAAAC5FHAPCCEFPEVV6DDGJ3P5IZ5VXSWA",
+    "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/greatsword.png",
+  gun: "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/gun.png",
   hammer:
-    "https://raw.githubusercontent.com/CrzxaExe/Zxra-web/refs/heads/master/img/icon/hammer.png?token=GHSAT0AAAAAAC5FHAPD5HSI6YOLTNANA4QAZ5VXG7A",
+    "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/hammer.png",
   katana:
-    "https://raw.githubusercontent.com/CrzxaExe/Zxra-web/refs/heads/master/img/icon/katana.png?token=GHSAT0AAAAAAC5FHAPDZCBUNZWD2MEOQRAKZ5VXLVQ",
+    "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/katana.png",
   lance:
     "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/lance.png",
   reaper:
-    "https://raw.githubusercontent.com/CrzxaExe/Zxra-web/refs/heads/master/img/icon/reaper.png?token=GHSAT0AAAAAAC5FHAPCYLBVFYNFOKNSMU3EZ5VXHOQ",
+    "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/reaper.png",
   slayer:
-    "https://raw.githubusercontent.com/CrzxaExe/Zxra-web/refs/heads/master/img/icon/slayer.png?token=GHSAT0AAAAAAC5FHAPD3EPMTLLSOLJNQCJWZ5VYZQA",
+    "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/slayer.png",
   spear:
-    "https://raw.githubusercontent.com/CrzxaExe/Zxra-web/refs/heads/master/img/icon/spear.png?token=GHSAT0AAAAAAC5FHAPCYCTZILJZFUMI6TQOZ5VXMEA",
+    "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/spear.png",
   staff:
-    "https://raw.githubusercontent.com/CrzxaExe/Zxra-web/refs/heads/master/img/icon/staff.png?token=GHSAT0AAAAAAC5FHAPDB2JASPNYSJ7J6AWSZ5VXZ3Q",
+    "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock/refs/heads/main/Resourcepack/textures/icon/staff.png",
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -87,13 +88,15 @@ const weaponRarity: any = {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const weaponPasif: any = {
-  chance: "While chance is trigger",
-  damage: "Damage increase",
-  hit: "When attacking target",
-  hited: "When being hit",
-  kill: "When killing target",
-  reload: "While reloading",
+  chance: "While chance is trigger,",
+  damage: "Damage increase,",
+  hit: "When attacking target,",
+  hited: "When being hit,",
+  kill: "When killing target,",
+  reload: "While reloading,",
+  skill: "Every time using skill,",
   stack: "Stack",
+  status_user: "When user has",
 };
 
 const BzbDisplay = ({
@@ -112,6 +115,8 @@ const BzbDisplay = ({
     "Rahmad",
     "Omen (FB)",
   ];
+
+  const [isWeaponFull, setIsWeaponFull] = useState(false);
 
   const wpn = WeaponInput("test");
 
@@ -157,13 +162,43 @@ const BzbDisplay = ({
               <span className="text-sky-400">English</span>
             </p>
           </DivWithHeader>
-          <DivWithHeader id="weapon" name="Weapons" className="mt-7">
-            <input
-              type="text"
-              placeholder="Name"
-              onChange={(e) => wpn.setWeaponFilter(e.target.value)}
-              className="block px-4 rounded-xs py-0.5 w-full max-w-[27rem] bg-[#323232] outline-hidden mt-2 text-sm lg:text-base text-slate-300"
-            />
+
+          <DivWithHeader id="mechanics" name="Mechanics" className="mt-7">
+            <p>
+              Bored with Minecraft&apos;s vanilla mechanics? We adding a few new
+              mechanics to the game for increasing the playing experience. It
+              will be your main focus because this will be your problem if you
+              dont know whats are this mechanics, so be carefull and do it.
+            </p>
+
+            <h2 className="text-lg lg:text-xl text-gray-400 mt-2">
+              Reputation
+            </h2>
+            <p>
+              This is about respect to other player, villager and this game
+              again. Reputation can be increase by clearing a quest. Inceasing
+              this, will gain some benefits such as villager shop will more
+              cheaper, new quest with higher reputation will appear and whats
+              again yall, i forgor. If you die or killing villager, your
+              reputation will decrease by 20%
+            </p>
+            <h2 className="text-lg lg:text-xl text-gray-400 mt-2">Stamina</h2>
+            <p>
+              Yes, typical rpg game, we adding stamina mechanics to the game.
+              Stamina will going down if you are running, attacking, destroying
+              and swimming by some indicator. Stamina down can be stop,
+              decreasing or increasing with some conditions. If your stamina are
+              low than 10 you will get Slowness effect, and if your stamina
+              going low again to 0 your will get poison effect and it will last
+              forever until your heart are 1. You will recovery the stamina when
+              you idle for 3 sec, idle can be walking or standing. Status %Tired
+              will decrease your recovery stamina. When you die, stamina are
+              full again. Max stamina can be increase by leveling up or read
+              books that increase your stamina.
+            </p>
+          </DivWithHeader>
+
+          <DivWithHeader id="weapon" name="Weapons" className="mt-4">
             <h2 className="text-slate-500 text-lg font-bold mt-4">Rarity</h2>
             <ul className="inline-flex flex-row w-full gap-4">
               <li className={weaponRarity.limited}>Limited</li>
@@ -172,6 +207,15 @@ const BzbDisplay = ({
               <li className={weaponRarity.legend}>Legend</li>
               <li className={weaponRarity.rare}>Rare</li>
             </ul>
+            <h2 className="text-slate-500 text-lg font-bold mt-6">
+              Search Weapon
+            </h2>
+            <input
+              type="text"
+              placeholder="Name"
+              onChange={(e) => wpn.setWeaponFilter(e.target.value)}
+              className="block px-4 rounded-xs py-0.5 w-full max-w-[27rem] bg-[#323232] outline-hidden mt-2 text-sm lg:text-base text-slate-300"
+            />
             <ul className="grid grid-cols-1 lg:grid-cols-3 gap-2 mt-4">
               {weapon?.weapons
                 .sort((a, b) => a.displayName.localeCompare(b.displayName))
@@ -179,16 +223,19 @@ const BzbDisplay = ({
                 .filter((e) => {
                   return wpn.weaponFilter === ""
                     ? true
-                    : e.displayName.toLowerCase().includes(wpn.weaponFilter)
+                    : e.displayName
+                        .toLowerCase()
+                        .includes(wpn.weaponFilter.toLowerCase())
                     ? true
                     : false;
                 })
+                .slice(0, isWeaponFull ? weapon.weapons.length : 6)
                 /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
                 .map((e: any, i: number) => {
                   return (
                     <li
                       key={i}
-                      className="bg-[#282828] px-3 py-2 text-sm relative hover:row-span-3 max-h-[11rem] hover:max-h-[100%] group/list"
+                      className="bg-[#282828] px-3 py-2 text-sm relative hover:row-span-3 max-h-[10rem] hover:max-h-[100%] group/list transition-all ease-in-out duration-300"
                     >
                       <h1
                         className={`${
@@ -201,22 +248,28 @@ const BzbDisplay = ({
                             src={weaponIcon[e.trait]}
                             width={20}
                             height={20}
-                            className="grayscale-1"
+                            className="grayscale-100"
                           />
                         )}
                         {e.displayName}
                       </h1>
-                      <div>
-                        <h1>
+                      <div className="mt-1 text-xs lg:text-sm">
+                        <h1 className="-mt-1 block">
                           Type{" "}
                           <span>
                             {e.trait.charAt(0).toUpperCase() + e.trait.slice(1)}
                           </span>
                         </h1>
-                        <span className="block">Atk&nbsp; : {e.atk}</span>
-                        <p>Tags: {e.tags.join(", ")}</p>
-                        {e.ammo && <p>Ammo: {e.ammo}</p>}
-                        <p className="mt-2 mb-3 block">
+                        <span className="block -mt-0.5">
+                          Atk&nbsp; : {e.atk}
+                        </span>
+                        <p className="block -mt-0.5">
+                          Tags: {e.tags.join(", ")}
+                        </p>
+                        {e.ammo && (
+                          <p className="block -mt-0.5">Ammo: {e.ammo}</p>
+                        )}
+                        <p className="mt-1 mb-3 block">
                           Trait: {weaponTraits[e.trait] || ""}
                         </p>
 
@@ -230,13 +283,13 @@ const BzbDisplay = ({
                                   key={i}
                                   className="group/item cursor-pointer"
                                 >
-                                  <h1 className="text-purple-700">
+                                  <h1 className="text-purple-700 peer inline hover:block">
                                     {`[`}
                                     {r.name}
                                     {`]`}
                                   </h1>
-                                  <p className="hidden group-hover/item:block">
-                                    {weaponPasif[r.type]}, {r.effect}
+                                  <p className="hidden peer-hover:block">
+                                    {weaponPasif[r.type]} {r.effect}
                                   </p>
                                 </li>
                               );
@@ -272,6 +325,13 @@ const BzbDisplay = ({
                   );
                 })}
             </ul>
+
+            <button
+              onClick={() => setIsWeaponFull(!isWeaponFull)}
+              className="w-full bg-[#282828] rounded-lg mt-3 text-center py-2"
+            >
+              {isWeaponFull ? "Show less" : "Show full"}
+            </button>
           </DivWithHeader>
         </div>
       </SubSectionWithHeader>

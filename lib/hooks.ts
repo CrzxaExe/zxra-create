@@ -11,5 +11,9 @@ const SignState = () => {
   const [isLogin, setIsLogin] = useState<boolean>(true);
   return { isLogin, setIsLogin };
 };
+const CreateToggle = () => {
+  const [toggle, setToggle] = useState<boolean>(false);
+  return { toggle, setToggle };
+};
 
-export { WeaponInput, SignState };
+export { WeaponInput, SignState, CreateToggle };

@@ -19,7 +19,7 @@ const Topbar = ({
 }) => {
   const [open, setOpen] = useState(false);
   const path = usePathname();
-  const noTopbarPath = ["dashboard", "about", "search", "projects"];
+  const noTopbarPath = ["dashboard", "about", "search", "projects", "gallery"];
 
   return (
     <>

@@ -1,7 +1,12 @@
 import { Drawer, Box } from "@mui/material";
 import React from "react";
 
-import { Newspaper, HomeRounded, ExploreRounded } from "@mui/icons-material";
+import {
+  Newspaper,
+  HomeRounded,
+  ExploreRounded,
+  PictureInPictureRounded,
+} from "@mui/icons-material";
 import Link from "next/link";
 
 export const Sidebar = ({
@@ -35,6 +40,15 @@ export const Sidebar = ({
               >
                 <Newspaper />
                 <span className="font-bold">Main</span>
+              </Link>
+            </li>
+            <li className="w-full rounded-r-lg text-base-upascent text-base hover:bg-base-upascent transition-all duration-300 ease-in-out hover:pl-4 hover:text-base-upfloor">
+              <Link
+                href="/gallery"
+                className="flex flex-row gap-4 items-center py-3 px-4"
+              >
+                <PictureInPictureRounded />
+                <span className="font-bold">Gallery</span>
               </Link>
             </li>
           </ul>
