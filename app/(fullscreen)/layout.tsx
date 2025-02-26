@@ -31,7 +31,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
           <h1 className="mt-1 text-base px-3 hidden lg:block">Menu</h1>
 
-          <ul className="self-center lg:self-auto pr-1 lg:-ml-[0.23rem]">
+          <ul className="self-center lg:self-auto pr-0.5 lg:pr-1 lg:-ml-[0.23rem]">
             <li className="w-full rounded-r-lg text-base transition-all duration-300 ease-in-out lg:hover:bg-base-upfloor lg:hover:scale-110 lg:hover:pl-1">
               <Link
                 href="/dashboard"

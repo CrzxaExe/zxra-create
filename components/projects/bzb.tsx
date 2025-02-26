@@ -37,7 +37,7 @@ const weaponTraits: any = {
   gun: "Use ranged attack, need ammo",
   hammer: "Every hit, deals additional damage 150%Target-HP (Max 150 Atk)",
   katana: "Deals 150% Atk while attacking Debuffed or Airbone target",
-  lance: "After dashing, next attack deals %Target-HP",
+  lance: "Dashing ability",
   reaper:
     "Every attack deal AOE damage to front user, heal amount of health for every target",
   slayer:
@@ -90,12 +90,17 @@ const weaponRarity: any = {
 const weaponPasif: any = {
   chance: "While chance is trigger,",
   damage: "Damage increase,",
+  debuff: "Apply debuff to target,",
+  dash: "After dashing,",
+  heal: "When healing target,",
   hit: "When attacking target,",
   hited: "When being hit,",
   kill: "When killing target,",
   reload: "While reloading,",
+  shield: "While has shield,",
   skill: "Every time using skill,",
   stack: "Stack",
+  status: "When target has",
   status_user: "When user has",
 };
 
@@ -116,6 +121,7 @@ const BzbDisplay = ({
     "Omen (FB)",
   ];
 
+  const [isMechanicsFull, setIsMechanicsFull] = useState(false);
   const [isWeaponFull, setIsWeaponFull] = useState(false);
 
   const wpn = WeaponInput("test");
@@ -155,15 +161,39 @@ const BzbDisplay = ({
 
       <SubSectionWithHeader id="features" className="mt-5" name="Features">
         <div className="mt-3 bg-[#202020] px-4 w-full py-3">
-          <DivWithHeader id="language" name="Language">
-            <p className="mt-1 text-xs lg:text-sm">
+          <DivWithHeader id="admin-panel" name="Admin Panel">
+            <p>
+              You can configure this addon feature and this can auto reload
+              everytime you change the configure. Many sub feature in this. If
+              you are lazy with custom command typing, you can use this panel to
+              simply change anything
+            </p>
+          </DivWithHeader>
+          <DivWithHeader id="death-loc" name="Death Location" className="mt-5">
+            <p>
+              Your death coodinates will be send via message, this feature are
+              private and only user that death can see this message. This can
+              set on/off in Admin Panel
+            </p>
+          </DivWithHeader>
+          <DivWithHeader id="guild" name="Guild" className="mt-5">
+            <p>
+              You can create or join an available guild, you will gain benefits
+              by joining guild. Guild will increase you Quest reward, and you
+              can buy enchantment from this or maybe you can buy other rare item
+              on this world. You can chat for guild user only by using +gd
+              command.
+            </p>
+          </DivWithHeader>
+          <DivWithHeader id="language" name="Language" className="mt-5">
+            <p>
               For now, available language for this addon are 2 only.{" "}
               <span className="text-sky-400">Indonesia</span> and{" "}
               <span className="text-sky-400">English</span>
             </p>
           </DivWithHeader>
 
-          <DivWithHeader id="mechanics" name="Mechanics" className="mt-7">
+          <DivWithHeader id="mechanics" name="Mechanics" className="mt-5">
             <p>
               Bored with Minecraft&apos;s vanilla mechanics? We adding a few new
               mechanics to the game for increasing the playing experience. It
@@ -171,35 +201,110 @@ const BzbDisplay = ({
               dont know whats are this mechanics, so be carefull and do it.
             </p>
 
-            <h2 className="text-lg lg:text-xl text-gray-400 mt-2">
-              Reputation
-            </h2>
-            <p>
-              This is about respect to other player, villager and this game
-              again. Reputation can be increase by clearing a quest. Inceasing
-              this, will gain some benefits such as villager shop will more
-              cheaper, new quest with higher reputation will appear and whats
-              again yall, i forgor. If you die or killing villager, your
-              reputation will decrease by 20%
-            </p>
-            <h2 className="text-lg lg:text-xl text-gray-400 mt-2">Stamina</h2>
-            <p>
-              Yes, typical rpg game, we adding stamina mechanics to the game.
-              Stamina will going down if you are running, attacking, destroying
-              and swimming by some indicator. Stamina down can be stop,
-              decreasing or increasing with some conditions. If your stamina are
-              low than 10 you will get Slowness effect, and if your stamina
-              going low again to 0 your will get poison effect and it will last
-              forever until your heart are 1. You will recovery the stamina when
-              you idle for 3 sec, idle can be walking or standing. Status %Tired
-              will decrease your recovery stamina. When you die, stamina are
-              full again. Max stamina can be increase by leveling up or read
-              books that increase your stamina.
-            </p>
+            {isMechanicsFull && (
+              <div className="mt-4 px-4 py-0.5">
+                <p>Here all the mechanics you need to know:</p>
+
+                <h2 className="text-lg lg:text-xl text-gray-400 mt-1">
+                  Cooldown
+                </h2>
+                <p>
+                  If you are using a weapon it will use this mechanics. Cooldown
+                  are cannot be decrease for now, but you can only be clear for
+                  some condition, cooldown will decrease by time. After you do
+                  some activity such as running, swimming, attacking, attacked
+                  and destroying you will ge Stamina Cooldown Status it basicly
+                  will stop your stamina recovery. Importantly, cooldown will be
+                  freeze if you get Silence Status.
+                </p>
+                <p>Here all the mechanics you need to know:</p>
+
+                <h2 className="text-lg lg:text-xl text-gray-400 mt-1">Money</h2>
+                <p>
+                  Who dont know money?. It are a thing can be used to buy
+                  anyting you want. This will be your economic feature. You can
+                  buy some iten in Stats menu or you can find villager with
+                  specific jobs for buying or selling items to them.
+                </p>
+                <h2 className="text-lg lg:text-xl text-gray-400 mt-1">
+                  Reputation
+                </h2>
+                <p>
+                  This is about respect to other player, villager and this game
+                  again. Reputation can be increase by clearing a quest.
+                  Inceasing this, will gain some benefits such as villager shop
+                  will more cheaper, new quest with higher reputation will
+                  appear and whats again yall, i forgor. If you die or killing
+                  villager, your reputation will decrease by 20%
+                </p>
+                <h2 className="text-lg lg:text-xl text-gray-400 mt-2">
+                  Stamina
+                </h2>
+                <p>
+                  Yes, typical rpg game, we adding stamina mechanics to the
+                  game. Stamina will going down if you are running, attacking,
+                  destroying and swimming by some indicator. Stamina down can be
+                  stop, decreasing or increasing with some conditions. If your
+                  stamina are low than 10 you will get Slowness effect, and if
+                  your stamina going low again to 0 your will get poison effect
+                  and it will last forever until your heart are 1. You will
+                  recovery the stamina when you idle for 3 sec, idle can be
+                  walking or standing. Status %Tired will decrease your recovery
+                  stamina. When you die, stamina are full again. Max stamina can
+                  be increase by leveling up or read books that increase your
+                  stamina.
+                </p>
+                <h2 className="text-lg lg:text-xl text-gray-400 mt-1">
+                  Status
+                </h2>
+                <p>
+                  This mechanics similar with entity effect from vanilla, but it
+                  will more complex. It can be use by flexible way such as for
+                  state, stack, debuff, buff, special condition, skill effect
+                  and many more. And luckily it support for 3rd Party feature,
+                  you can call scriptevent to add custom status to your target.
+                  Status can change other feature behavior, that can be serious
+                  problem if you dont know about this. It will be your main core
+                  mechanic for Special Weapon user.
+                </p>
+                <h2 className="text-lg lg:text-xl text-gray-400 mt-1">
+                  Thirst
+                </h2>
+                <p>
+                  This mechanics will force you to drink water to survive. This
+                  will decrease every time, the decrease value can be increase
+                  by some condition. Do running or swimming, going to nether can
+                  increase your thrist drop. If your thirst are low than 2 your
+                  will get Nausea effect for unlimited duration until you drink
+                  water again. It difference with stamina, you cannot increase
+                  the max value. Max thirst of the player can increase to 110%,
+                  but your will get some debuff if your thirst reach 105% or
+                  more
+                </p>
+              </div>
+            )}
+
+            <button
+              onClick={() => setIsMechanicsFull(!isMechanicsFull)}
+              className="w-full bg-[#282828] rounded-lg mt-3 text-center py-2"
+            >
+              {isMechanicsFull ? "Show less" : "Show all Mechanics"}
+            </button>
           </DivWithHeader>
 
           <DivWithHeader id="weapon" name="Weapons" className="mt-4">
-            <h2 className="text-slate-500 text-lg font-bold mt-4">Rarity</h2>
+            <p>
+              There is 2 types of weapon, Normal Weapon and Special Weapon.
+              Normal Weapon are weapons without special this, its like vanilla
+              weapon that can be enchant, repair and many more vanilla weapon
+              can do. Meanwhile, Special weapon are weapons with special
+              behavior, has rarity, has trait, has pasif and skill, and the more
+              important is it not have durability. But Special Weapon are rare
+            </p>
+
+            <h2 className="text-slate-500 text-lg font-bold mt-4">
+              Special Weapon Rarity
+            </h2>
             <ul className="inline-flex flex-row w-full gap-4">
               <li className={weaponRarity.limited}>Limited</li>
               <li className={weaponRarity.unique}>Unique</li>
@@ -208,13 +313,13 @@ const BzbDisplay = ({
               <li className={weaponRarity.rare}>Rare</li>
             </ul>
             <h2 className="text-slate-500 text-lg font-bold mt-6">
-              Search Weapon
+              All Special Weapon
             </h2>
             <input
               type="text"
               placeholder="Name"
               onChange={(e) => wpn.setWeaponFilter(e.target.value)}
-              className="block px-4 rounded-xs py-0.5 w-full max-w-[27rem] bg-[#323232] outline-hidden mt-2 text-sm lg:text-base text-slate-300"
+              className="block px-4 rounded-xs py-0.5 w-full max-w-[30rem] bg-[#323232] outline-hidden mt-2 text-base lg:text-lg text-slate-300"
             />
             <ul className="grid grid-cols-1 lg:grid-cols-3 gap-2 mt-4">
               {weapon?.weapons

@@ -6,7 +6,7 @@ const Page = () => {
   metadata.title = "Tentang";
 
   return (
-    <div className="max-w-(--breakpoint-2xl) mx-auto mb-[2rem] pb-[3rem]">
+    <div className="max-w-(--breakpoint-2xl) mx-auto mb-[2rem] pb-[9rem] min-h-screen max-h-screen overflow-y-scroll">
       <section className="mb-5">
         <h1 className="text-4xl text-teal-500 font-bold">Zxra</h1>
         <span className="text-slate-300">Eazier your life with us</span>

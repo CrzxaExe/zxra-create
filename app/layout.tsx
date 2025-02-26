@@ -29,7 +29,7 @@ const paprika = localFont({
 
 export const metadata: Metadata = {
   title: "Zxra Create",
-  description: "Zxra for our apps",
+  description: "Zxra here is for your apps",
 };
 
 export default async function RootLayout({

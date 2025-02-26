@@ -6,8 +6,8 @@ import { ProjectTemplate } from "@/components/projects/base";
 import { metadata } from "@/app/layout";
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
-  const { data } = await axios.get("https://zxra-rest.vercel.app/project-list");
-  const weapon = await axios.get("https://zxra-rest.vercel.app/bzbweapon");
+  const { data } = await axios.get(process.env.API_URL + "/project-list");
+  const weapon = await axios.get(process.env.API_URL + "/bzbweapon");
 
   metadata.title = "Project Item";
 

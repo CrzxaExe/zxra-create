@@ -7,7 +7,7 @@ import { metadata } from "@/app/layout";
 const Page = async () => {
   metadata.title = "Projects";
 
-  const { data } = await axios.get("https://zxra-rest.vercel.app/project-list");
+  const { data } = await axios.get(process.env.API_URL + "/project-list");
   return (
     <div className="isolate text-sm lg:text-base">
       <ProjectList project={data.project} />

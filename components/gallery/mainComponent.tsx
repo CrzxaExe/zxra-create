@@ -21,7 +21,7 @@ const MainComponent = ({ image }: { image: Array<string> }) => {
               alt="display"
               width={500}
               height={500}
-              className="w-full w-max-full scale-90 lg:scale-100 origin-center lg:aspect-square object-contain"
+              className="w-full w-max-full scale-90 lg:scale-100 origin-center lg:aspect-square object-contain bg-gray-300 rounded-lg"
             />
             <div className="flex flex-row w-full gap-1 px-2 -mt-2 lg:mt-3">
               <a
@@ -61,7 +61,7 @@ const MainComponent = ({ image }: { image: Array<string> }) => {
             Images:
           </h1>
 
-          <ul className="mt-4 grid grid-cols-2 lg:grid-cols-6 w-[100%] lg:w-[300%] gap-2">
+          <ul className="mt-4 grid grid-cols-3 lg:grid-cols-7 w-[100%] lg:w-[300%] gap-2">
             {image.map((img, i) => (
               <li
                 key={i}
