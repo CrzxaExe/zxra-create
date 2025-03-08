@@ -81,9 +81,9 @@ const weaponIcon: any = {
 const weaponRarity: any = {
   limited: "text-cyan-400",
   unique: "text-lime-400",
-  epic: "text-purple-400",
+  epic: "text-fuchsia-400",
   legend: "text-amber-400",
-  rare: "text-slate-400",
+  rare: "text-violet-400",
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -337,97 +337,7 @@ const BzbDisplay = ({
                 .slice(0, isWeaponFull ? weapon.weapons.length : 6)
                 /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
                 .map((e: any, i: number) => {
-                  return (
-                    <li
-                      key={i}
-                      className="bg-[#282828] px-3 py-2 text-sm relative hover:row-span-3 max-h-[10rem] hover:max-h-[100%] group/list transition-all ease-in-out duration-300"
-                    >
-                      <h1
-                        className={`${
-                          weaponRarity[e.rarity]
-                        } font-valorant font-bold text-lg lg:text-xl mt-2 flex flex-row items-center gap-2`}
-                      >
-                        {weaponIcon[e.trait] && (
-                          <Image
-                            alt="Weapon icon"
-                            src={weaponIcon[e.trait]}
-                            width={20}
-                            height={20}
-                            className="grayscale-100"
-                          />
-                        )}
-                        {e.displayName}
-                      </h1>
-                      <div className="mt-1 text-xs lg:text-sm">
-                        <h1 className="-mt-1 block">
-                          Type{" "}
-                          <span>
-                            {e.trait.charAt(0).toUpperCase() + e.trait.slice(1)}
-                          </span>
-                        </h1>
-                        <span className="block -mt-0.5">
-                          Atk&nbsp; : {e.atk}
-                        </span>
-                        <p className="block -mt-0.5">
-                          Tags: {e.tags.join(", ")}
-                        </p>
-                        {e.ammo && (
-                          <p className="block -mt-0.5">Ammo: {e.ammo}</p>
-                        )}
-                        <p className="mt-1 mb-3 block">
-                          Trait: {weaponTraits[e.trait] || ""}
-                        </p>
-
-                        {e.pasif.length > 0 && (
-                          <ul className="hidden group-hover/list:block">
-                            Pasif: <br />
-                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                            {e.pasif.map((r: any, i: number) => {
-                              return (
-                                <li
-                                  key={i}
-                                  className="group/item cursor-pointer"
-                                >
-                                  <h1 className="text-purple-700 peer inline hover:block">
-                                    {`[`}
-                                    {r.name}
-                                    {`]`}
-                                  </h1>
-                                  <p className="hidden peer-hover:block">
-                                    {weaponPasif[r.type]} {r.effect}
-                                  </p>
-                                </li>
-                              );
-                            })}
-                          </ul>
-                        )}
-
-                        {e.skill.length > 0 && (
-                          <ul className="mt-3 hidden group-hover/list:block">
-                            Skill: <br />
-                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                            {e.skill.map((r: any, i: number) => {
-                              return (
-                                <li key={i} className="group cursor-pointer">
-                                  <h1 className="text-amber-400">
-                                    {`[`}
-                                    {r.skill}
-                                    {`]`}
-                                  </h1>
-                                  <p className="hidden group-hover:block">
-                                    CD {r.cooldown}, Stamina {r.stamina},
-                                    Condition {r.condition}
-                                    <br /> <br />
-                                    {r.effect}
-                                  </p>
-                                </li>
-                              );
-                            })}
-                          </ul>
-                        )}
-                      </div>
-                    </li>
-                  );
+                  return <WeaponCard e={e} i={i} key={i} />;
                 })}
             </ul>
 
@@ -471,6 +381,142 @@ const BzbDisplay = ({
         </p>
       </SubSectionWithHeader>
     </>
+  );
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const WeaponCard = ({ e, i }: { e: any; i: number }) => {
+  const [open, setOpen] = useState<boolean>(false);
+  const [pasif, setPasif] = useState<string>("");
+  const [skill, setSkill] = useState<string>("");
+
+  return (
+    <li
+      key={i}
+      className={`bg-[#282828] px-3 py-2 text-sm relative ${
+        open ? "row-span-3 max-h-[100%]" : "max-h-[10rem]"
+      } group/list transition-all ease-in-out duration-300`}
+      onClick={(event) => {
+        event.stopPropagation();
+
+        if (open) return;
+        setOpen(true);
+        setPasif("");
+        setSkill("");
+      }}
+    >
+      <div
+        className={`${
+          open ? "block" : "hidden"
+        } absolute top-2 right-2 bg-[#242424] font-mono aspect-square w-7.5 text-[#707070] rounded-lg text-lg text-center cursor-pointer`}
+        onClick={(event) => {
+          event.stopPropagation();
+          setOpen(false);
+        }}
+      >
+        X
+      </div>
+      <h1
+        className={`${
+          weaponRarity[e.rarity]
+        } font-valorant font-bold text-lg lg:text-xl mt-2 flex flex-row items-center gap-2`}
+      >
+        {weaponIcon[e.trait] && (
+          <Image
+            alt="Weapon icon"
+            src={weaponIcon[e.trait]}
+            width={20}
+            height={20}
+            className="grayscale-100"
+          />
+        )}
+        {e.displayName}
+      </h1>
+      <div className="mt-1 text-xs lg:text-sm">
+        <div className="px-3 py-1.5 bg-[#242424] -mt-1 mb-3">
+          <h1 className="block">
+            Type{" "}
+            <span>{e.trait.charAt(0).toUpperCase() + e.trait.slice(1)}</span>
+          </h1>
+          <span className="block -mt-0.5">Atk&nbsp; : {e.atk}</span>
+          <p className="block -mt-0.5">Tags: {e.tags.join(", ")}</p>
+          {e.ammo && <p className="block -mt-0.5">Ammo: {e.ammo}</p>}
+          <p className="mt-1 block">Trait: {weaponTraits[e.trait] || ""}</p>
+        </div>
+
+        {e.pasif.length > 0 && (
+          <ul className={`${open ? "block" : "hidden"} flex flex-row gap-2`}>
+            Pasif: <br />
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+            {e.pasif.map((r: any, i: number) => {
+              return (
+                <li
+                  key={i}
+                  className="cursor-pointer"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setPasif(`${r.name}: ${weaponPasif[r.type]} ${r.effect}`);
+                  }}
+                >
+                  <h1 className="text-purple-700 inline hover:block">
+                    {`[`}
+                    {r.name}
+                    {`]`}
+                  </h1>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+        <p
+          className={`${open ? "block" : "hidden"} ${
+            pasif !== "" ? "px-4 py-1 bg-[#242424]" : ""
+          } whitespace-pre-line rounded mt-2`}
+        >
+          {pasif}
+        </p>
+
+        {e.skill.length > 0 && (
+          <ul
+            className={`mt-3 ${open ? "block" : "hidden"} flex flex-row gap-2`}
+          >
+            Skill: <br />
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+            {e.skill.map((r: any, i: number) => {
+              return (
+                <li
+                  key={i}
+                  className="cursor-pointer"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setSkill(
+                      `Skill ${r.skill}\n${r.effect}\n\nCD ${
+                        r.cooldown
+                      }s\nStamina ${r.stamina}\n${
+                        !!r.condition ? "Condition :" + r.condition : ""
+                      }`
+                    );
+                  }}
+                >
+                  <h1 className="text-amber-400">
+                    {`[`}
+                    {r.skill}
+                    {`]`}
+                  </h1>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+        <p
+          className={`${open ? "block" : "hidden"} ${
+            skill !== "" ? "px-4 py-1 bg-[#242424]" : ""
+          } whitespace-pre-line mt-4 rounded`}
+        >
+          {skill}
+        </p>
+      </div>
+    </li>
   );
 };
 
